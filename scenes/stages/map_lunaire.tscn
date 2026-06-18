@@ -1,0 +1,391 @@
+[gd_scene format=3 uid="uid://b6cjd3dxelqol"]
+
+[ext_resource type="Script" uid="uid://brtd404y3d7wq" path="res://scripts/stages/dev_stage.gd" id="1_nilyu"]
+[ext_resource type="Script" uid="uid://bd7ypfuxertcc" path="res://scripts/platform.gd" id="2_3pgli"]
+[ext_resource type="Texture2D" uid="uid://b40ga4h2dwwsf" path="res://assets/sprites/plateforme lunaire 1.png" id="3_u6k6p"]
+[ext_resource type="PackedScene" uid="uid://duwlcuffy55yg" path="res://scenes/plateforme1.tscn" id="4_0wnld"]
+[ext_resource type="Texture2D" uid="uid://bar5lvx5m7tko" path="res://assets/sprites/plateforme marsienne 1.png" id="5_jt7t1"]
+[ext_resource type="Script" uid="uid://bnk81mj5ys8rk" path="res://scripts/blastzone.gd" id="6_xrrj5"]
+[ext_resource type="Script" uid="uid://cgn1behbhvis2" path="res://scripts/camera_2d.gd" id="7_53gbb"]
+[ext_resource type="Texture2D" uid="uid://wx50k7w8o731" path="res://assets/sprites/map lunaire.png" id="8_lqeng"]
+[ext_resource type="Script" uid="uid://bur1i54bpfqt0" path="res://scripts/hud.gd" id="9_16gcn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b5spy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxttp"]
+size = Vector2(1792.5, 56.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6k6p"]
+size = Vector2(563, 31.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pgli"]
+size = Vector2(275, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nilyu"]
+size = Vector2(138, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wnld"]
+size = Vector2(264.5, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jt7t1"]
+size = Vector2(460, 45)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b5spy"]
+normal = Vector2(1, 0)
+distance = 41.498188
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_utbpp"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mw25s"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tcjrq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5spy"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.5686275)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.91227055, 4.7168137e-06, 6.738305e-07, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utbpp"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.22745098)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.009947663, 0.23879623, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="DevStage2" type="Node2D" unique_id=2052335995 node_paths=PackedStringArray("p1_spawn", "p2_spawn", "hud")]
+script = ExtResource("1_nilyu")
+p1_spawn = NodePath("P1 Spawn")
+p2_spawn = NodePath("P2 Spawn")
+hud = NodePath("HUD/HUDControl")
+
+[node name="MoonPlatform1" type="StaticBody2D" parent="." unique_id=152687302]
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_b5spy")
+script = ExtResource("2_3pgli")
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonPlatform1" unique_id=1202237861]
+position = Vector2(613, 561)
+scale = Vector2(6, 2)
+texture = ExtResource("3_u6k6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPlatform1" unique_id=886279966]
+position = Vector2(612.25, 561.25)
+shape = SubResource("RectangleShape2D_lxttp")
+
+[node name="MoonPlatform2" type="StaticBody2D" parent="." unique_id=1163723096]
+position = Vector2(764, -127)
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_b5spy")
+script = ExtResource("2_3pgli")
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonPlatform2" unique_id=1572962117]
+position = Vector2(947, 471)
+scale = Vector2(1.8754168, 1)
+texture = ExtResource("3_u6k6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPlatform2" unique_id=940998669]
+position = Vector2(947.5, 471.25)
+shape = SubResource("RectangleShape2D_u6k6p")
+
+[node name="MoonPlatform3" type="StaticBody2D" parent="." unique_id=1074060910]
+position = Vector2(1528, -254)
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_b5spy")
+script = ExtResource("2_3pgli")
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonPlatform3" unique_id=128670596]
+position = Vector2(-1317.3438, 173)
+scale = Vector2(0.91770834, 1)
+texture = ExtResource("3_u6k6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPlatform3" unique_id=1230710315]
+position = Vector2(-1317.5, 173)
+shape = SubResource("RectangleShape2D_3pgli")
+one_way_collision = true
+
+[node name="MoonPlatform4" type="StaticBody2D" parent="." unique_id=592483555]
+position = Vector2(1528, -254)
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_b5spy")
+script = ExtResource("2_3pgli")
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonPlatform4" unique_id=701505772]
+position = Vector2(-2176.3281, 320.5)
+scale = Vector2(0.46218807, 0.78125)
+texture = ExtResource("3_u6k6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPlatform4" unique_id=891263540]
+position = Vector2(-2176, 320.5)
+shape = SubResource("RectangleShape2D_nilyu")
+one_way_collision = true
+
+[node name="MoonPlatform5" type="StaticBody2D" parent="." unique_id=1073676768]
+position = Vector2(3056, -508)
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_b5spy")
+script = ExtResource("2_3pgli")
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonPlatform5" unique_id=1725019575]
+position = Vector2(-1538.1641, 305)
+scale = Vector2(0.88109416, 0.78125)
+texture = ExtResource("3_u6k6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPlatform5" unique_id=868279296]
+position = Vector2(-1538.25, 304.5)
+shape = SubResource("RectangleShape2D_0wnld")
+
+[node name="MoonPlatform6" type="StaticBody2D" parent="." unique_id=23439267]
+position = Vector2(6112, -1016)
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_b5spy")
+script = ExtResource("2_3pgli")
+
+[node name="Sprite2D" type="Sprite2D" parent="MoonPlatform6" unique_id=542543939]
+position = Vector2(-6220, 461.41016)
+scale = Vector2(1.5336074, 1.4118654)
+texture = ExtResource("3_u6k6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPlatform6" unique_id=168997582]
+position = Vector2(-6220, 461.5)
+shape = SubResource("RectangleShape2D_jt7t1")
+one_way_collision = true
+
+[node name="Plateforme1" parent="." unique_id=1368431984 instance=ExtResource("4_0wnld")]
+position = Vector2(-195, -196)
+
+[node name="Sprite2D" parent="Plateforme1/AnimatableBody2D" parent_id_path=PackedInt32Array(1368431984, 1939912043) index="0" unique_id=352615744]
+position = Vector2(70, 535)
+texture = ExtResource("5_jt7t1")
+
+[node name="CollisionShape2D" parent="Plateforme1/AnimatableBody2D" parent_id_path=PackedInt32Array(1368431984, 1939912043) index="1" unique_id=929413730]
+position = Vector2(71, 535)
+tailleCollision = 18.0
+
+[node name="Plateforme2" parent="." unique_id=172428346 instance=ExtResource("4_0wnld")]
+position = Vector2(390, -392)
+
+[node name="Sprite2D" parent="Plateforme2/AnimatableBody2D" parent_id_path=PackedInt32Array(172428346, 1939912043) index="0" unique_id=352615744]
+position = Vector2(271.05, 539)
+scale = Vector2(1.5594999, 1)
+texture = ExtResource("5_jt7t1")
+
+[node name="CollisionShape2D" parent="Plateforme2/AnimatableBody2D" parent_id_path=PackedInt32Array(172428346, 1939912043) index="1" unique_id=929413730]
+position = Vector2(271, 539)
+tailleCollision = 11.0
+
+[node name="AnimationPlayer" parent="Plateforme2/AnimatableBody2D" parent_id_path=PackedInt32Array(172428346, 1939912043) index="2" unique_id=19003126]
+autoplay = &"move2"
+
+[node name="Plateforme3" parent="." unique_id=2065713970 instance=ExtResource("4_0wnld")]
+position = Vector2(-390, -392)
+
+[node name="Sprite2D" parent="Plateforme3/AnimatableBody2D" parent_id_path=PackedInt32Array(2065713970, 1939912043) index="0" unique_id=352615744]
+position = Vector2(-762.1, 599)
+texture = ExtResource("5_jt7t1")
+
+[node name="CollisionShape2D" parent="Plateforme3/AnimatableBody2D" parent_id_path=PackedInt32Array(2065713970, 1939912043) index="1" unique_id=929413730]
+position = Vector2(-761.1, 599)
+tailleCollision = 18.0
+
+[node name="AnimationPlayer" parent="Plateforme3/AnimatableBody2D" parent_id_path=PackedInt32Array(2065713970, 1939912043) index="2" unique_id=19003126]
+autoplay = &"move2"
+
+[node name="Plateforme4" parent="." unique_id=753947949 instance=ExtResource("4_0wnld")]
+position = Vector2(-780, -784)
+
+[node name="Sprite2D" parent="Plateforme4/AnimatableBody2D" parent_id_path=PackedInt32Array(753947949, 1939912043) index="0" unique_id=352615744]
+position = Vector2(262.90002, 594)
+texture = ExtResource("5_jt7t1")
+
+[node name="CollisionShape2D" parent="Plateforme4/AnimatableBody2D" parent_id_path=PackedInt32Array(753947949, 1939912043) index="1" unique_id=929413730]
+position = Vector2(263.90002, 594)
+tailleCollision = 18.0
+
+[node name="AnimationPlayer" parent="Plateforme4/AnimatableBody2D" parent_id_path=PackedInt32Array(753947949, 1939912043) index="2" unique_id=19003126]
+autoplay = &"move3"
+
+[node name="Plateforme5" parent="." unique_id=836595683 instance=ExtResource("4_0wnld")]
+position = Vector2(-1560, -1568)
+
+[node name="Sprite2D" parent="Plateforme5/AnimatableBody2D" parent_id_path=PackedInt32Array(836595683, 1939912043) index="0" unique_id=352615744]
+position = Vector2(2158.9, 1233)
+texture = ExtResource("5_jt7t1")
+
+[node name="CollisionShape2D" parent="Plateforme5/AnimatableBody2D" parent_id_path=PackedInt32Array(836595683, 1939912043) index="1" unique_id=929413730]
+position = Vector2(2159.9, 1233)
+tailleCollision = 18.0
+
+[node name="BlastzoneLeft" type="Area2D" parent="." unique_id=1329137969]
+position = Vector2(-1000, -2)
+collision_layer = 0
+script = ExtResource("6_xrrj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastzoneLeft" unique_id=2103033705]
+position = Vector2(-662, 1)
+shape = SubResource("WorldBoundaryShape2D_b5spy")
+
+[node name="BlastzoneRight" type="Area2D" parent="." unique_id=1065344018]
+position = Vector2(1000, -2.1)
+collision_layer = 0
+script = ExtResource("6_xrrj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastzoneRight" unique_id=445339068]
+position = Vector2(1534, 0)
+shape = SubResource("WorldBoundaryShape2D_utbpp")
+
+[node name="BlastzoneTop" type="Area2D" parent="." unique_id=58953580]
+position = Vector2(1, -1000)
+collision_layer = 0
+script = ExtResource("6_xrrj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastzoneTop" unique_id=317195787]
+position = Vector2(0, -576)
+shape = SubResource("WorldBoundaryShape2D_mw25s")
+
+[node name="BlastzoneBottom" type="Area2D" parent="." unique_id=1798537245]
+position = Vector2(1, 1000)
+collision_layer = 0
+script = ExtResource("6_xrrj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlastzoneBottom" unique_id=2101419461]
+position = Vector2(0, 271)
+shape = SubResource("WorldBoundaryShape2D_tcjrq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=938563523]
+position = Vector2(-4, -161)
+position_smoothing_enabled = true
+script = ExtResource("7_53gbb")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1750403046]
+z_index = -1
+position = Vector2(456.50006, -152.25008)
+scale = Vector2(21.640625, 26.356482)
+texture = ExtResource("8_lqeng")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1605162887]
+
+[node name="HUDControl" type="Control" parent="HUD" unique_id=1148448568]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_16gcn")
+
+[node name="P1Panel" type="PanelContainer" parent="HUD/HUDControl" unique_id=977925547]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 171.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b5spy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/HUDControl/P1Panel" unique_id=1461022554]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="P1Name" type="Label" parent="HUD/HUDControl/P1Panel/VBoxContainer" unique_id=76834902]
+layout_mode = 2
+text = "Joueur 1"
+
+[node name="P1Percent" type="Label" parent="HUD/HUDControl/P1Panel/VBoxContainer" unique_id=1675985525]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+text = "0%"
+horizontal_alignment = 1
+
+[node name="P1Stocks" type="HBoxContainer" parent="HUD/HUDControl/P1Panel/VBoxContainer" unique_id=307571703]
+layout_mode = 2
+
+[node name="P1Special" type="ProgressBar" parent="HUD/HUDControl/P1Panel/VBoxContainer" unique_id=2144527968]
+layout_mode = 2
+
+[node name="P2Panel" type="PanelContainer" parent="HUD/HUDControl" unique_id=1451034187]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_left = 1675.0
+offset_top = 20.0
+offset_right = 1875.0
+offset_bottom = 171.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_utbpp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/HUDControl/P2Panel" unique_id=2062939722]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="P2Name" type="Label" parent="HUD/HUDControl/P2Panel/VBoxContainer" unique_id=958592765]
+layout_mode = 2
+text = "Joueur 2"
+
+[node name="P2Percent" type="Label" parent="HUD/HUDControl/P2Panel/VBoxContainer" unique_id=1657415330]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+text = "0%"
+horizontal_alignment = 1
+
+[node name="P2Stocks" type="HBoxContainer" parent="HUD/HUDControl/P2Panel/VBoxContainer" unique_id=1346808228]
+layout_mode = 2
+
+[node name="P2Special" type="ProgressBar" parent="HUD/HUDControl/P2Panel/VBoxContainer" unique_id=1479362686]
+layout_mode = 2
+
+[node name="TimePanel" type="PanelContainer" parent="HUD/HUDControl" unique_id=692279510]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = 20.0
+offset_right = 75.0
+offset_bottom = 100.0
+grow_horizontal = 2
+
+[node name="TimeLabel" type="Label" parent="HUD/HUDControl/TimePanel" unique_id=644326461]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+text = "03:00"
+horizontal_alignment = 1
+
+[node name="P1 Spawn" type="Marker2D" parent="." unique_id=122754158]
+position = Vector2(-51, -93)
+
+[node name="P2 Spawn" type="Marker2D" parent="." unique_id=1154575394]
+position = Vector2(718, -233)
+
+[editable path="Plateforme1"]
+[editable path="Plateforme2"]
+[editable path="Plateforme3"]
+[editable path="Plateforme4"]
+[editable path="Plateforme5"]

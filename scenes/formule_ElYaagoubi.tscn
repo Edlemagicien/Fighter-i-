@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dpdsdmg2rpfsk"]
+
+[ext_resource type="Script" uid="uid://bdvwhkyofrymf" path="res://scripts/formule_el_yaagoubi.gd" id="1_rlqmh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rlqmh"]
+font_size = 35
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlqmh"]
+size = Vector2(222, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myr7a"]
+size = Vector2(236, 53)
+
+[node name="formule_ElYaagoubi" type="Area2D" unique_id=1794757852]
+script = ExtResource("1_rlqmh")
+
+[node name="Label" type="Label" parent="." unique_id=797118064]
+offset_left = -95.0
+offset_top = -43.0
+offset_right = 96.0
+offset_bottom = -1.0
+text = "f(x,y) = x² + y²"
+label_settings = SubResource("LabelSettings_rlqmh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=848428369]
+position = Vector2(16, -16)
+shape = SubResource("RectangleShape2D_rlqmh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1002048364]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=171729533]
+position = Vector2(15, -16.5)
+shape = SubResource("RectangleShape2D_myr7a")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://s3lnjhxhl7gd"]
+
+[ext_resource type="Script" uid="uid://t0743o2natja" path="res://scripts/ui/stage_slot.gd" id="1_2lmf2"]
+[ext_resource type="FontFile" uid="uid://d4beyjxkjfg6p" path="res://assets/fonts/perfect_dos_vga_437.ttf" id="2_3pwsc"]
+
+[node name="StageSlot" type="Button" unique_id=1838361614 node_paths=PackedStringArray("preview_texture", "name_label")]
+custom_minimum_size = Vector2(100, 50)
+offset_right = 100.0
+offset_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_2lmf2")
+preview_texture = NodePath("MarginContainer/Control/PreviewTexture")
+name_label = NodePath("MarginContainer/Control/NameLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1263556184]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Control" type="Control" parent="MarginContainer" unique_id=171045442]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PreviewTexture" type="TextureRect" parent="MarginContainer/Control" unique_id=263258478]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 6
+
+[node name="NameLabel" type="Label" parent="MarginContainer/Control" unique_id=309107951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3pwsc")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1

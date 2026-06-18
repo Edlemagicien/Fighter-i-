@@ -1,0 +1,345 @@
+[gd_scene format=3 uid="uid://02s73tx6iorh"]
+
+[ext_resource type="Script" uid="uid://bn4v75flwdudd" path="res://scripts/ElYaagoubi.gd" id="1_60jth"]
+[ext_resource type="Texture2D" uid="uid://cylmo6gnque8x" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_idle1.png" id="2_idle1"]
+[ext_resource type="Texture2D" uid="uid://w13wsf5hwjvj" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_idle2.png" id="3_idle2"]
+[ext_resource type="Texture2D" uid="uid://cbbwnmj1joovp" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_idle3.png" id="4_idle3"]
+[ext_resource type="Texture2D" uid="uid://o6nm4qcjbjq3" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_idle4.png" id="5_idle4"]
+[ext_resource type="Texture2D" uid="uid://bkjp5lyf2i0o6" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_idle5.png" id="6_idle5"]
+[ext_resource type="Texture2D" uid="uid://mjldvjxyucvq" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_idle6.png" id="7_idle6"]
+[ext_resource type="Texture2D" uid="uid://chh3q55dw6cm3" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_idle7.png" id="8_idle7"]
+[ext_resource type="Texture2D" uid="uid://7ghl3od5fia" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_idle8.png" id="9_idle8"]
+[ext_resource type="Texture2D" uid="uid://drrg2wc6dg8gj" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_idle9.png" id="10_idle9"]
+[ext_resource type="Texture2D" uid="uid://ceg1gyc7w00i4" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_walk1.png" id="11_walk1"]
+[ext_resource type="Texture2D" uid="uid://bukf85p4yrqg6" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_walk2.png" id="12_walk2"]
+[ext_resource type="Texture2D" uid="uid://nm6c0rvmrnhd" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_walk3.png" id="13_walk3"]
+[ext_resource type="Texture2D" uid="uid://101cjv7o8oy4" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_walk4.png" id="14_walk4"]
+[ext_resource type="Texture2D" uid="uid://b8tjq7251k6fi" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_walk5.png" id="15_walk5"]
+[ext_resource type="Texture2D" uid="uid://cxaxas2efe1py" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_walk6.png" id="16_walk6"]
+[ext_resource type="Texture2D" uid="uid://8jlm60jnwbmn" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_walk7.png" id="17_walk7"]
+[ext_resource type="Texture2D" uid="uid://bpb8kqdpxc1pr" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_walk8.png" id="18_walk8"]
+[ext_resource type="Texture2D" uid="uid://did01uc21nyqt" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_walk9.png" id="19_walk9"]
+[ext_resource type="Texture2D" uid="uid://b6qkbx6x2ijt6" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_dash1.png" id="20_dash1"]
+[ext_resource type="Texture2D" uid="uid://cxh1flkwkgn25" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_dash2.png" id="21_dash2"]
+[ext_resource type="Texture2D" uid="uid://bdpx811w6ubgl" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_dash3.png" id="22_dash3"]
+[ext_resource type="Texture2D" uid="uid://bkesrliciaop4" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_dash4.png" id="23_dash4"]
+[ext_resource type="Texture2D" uid="uid://byogmg7gwx6bd" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_dash5.png" id="24_dash5"]
+[ext_resource type="Texture2D" uid="uid://d0ieq6dxm5qbt" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_dash6.png" id="25_dash6"]
+[ext_resource type="Texture2D" uid="uid://yit2jfaovjgk" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_dash7.png" id="26_dash7"]
+[ext_resource type="Texture2D" uid="uid://doy0bofhxg005" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_dash8.png" id="27_dash8"]
+[ext_resource type="Texture2D" uid="uid://dv48uocal885n" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_dash9.png" id="28_dash9"]
+[ext_resource type="Texture2D" uid="uid://cilyhd1ss0rmp" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_jump1.png" id="29_jump1"]
+[ext_resource type="Texture2D" uid="uid://ddpbc27tm70ak" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_jump2.png" id="30_jump2"]
+[ext_resource type="Texture2D" uid="uid://ci4olyki12ywy" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_jump3.png" id="31_jump3"]
+[ext_resource type="Texture2D" uid="uid://c5rsw7xj6khr4" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_jump4.png" id="32_jump4"]
+[ext_resource type="Texture2D" uid="uid://siuh8pas4lip" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_jump5.png" id="33_jump5"]
+[ext_resource type="Texture2D" uid="uid://cthbu84y6miog" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_jump6.png" id="34_jump6"]
+[ext_resource type="Texture2D" uid="uid://bkpwpy6580u4b" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_jump7.png" id="35_jump7"]
+[ext_resource type="Texture2D" uid="uid://dxjqaicwarrry" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_jump8.png" id="36_jump8"]
+[ext_resource type="Texture2D" uid="uid://erdnfcg38cvw" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_jump9.png" id="37_jump9"]
+[ext_resource type="Texture2D" uid="uid://1y26hwti1nup" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_attaque0.png" id="38_8q7o2"]
+[ext_resource type="Texture2D" uid="uid://b8osludu2u8rj" path="res://assets/sprites/Personnages/El Yaagoubi/el_yagoubi_taking_damage1.png" id="38_damage1"]
+[ext_resource type="Texture2D" uid="uid://c5k2bebt5icip" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_attaque1.png" id="39_20j6u"]
+[ext_resource type="Texture2D" uid="uid://qq61u3kxkeya" path="res://assets/sprites/Personnages/El Yaagoubi/el_yagoubi_taking_damage2.png" id="39_damage2"]
+[ext_resource type="Texture2D" uid="uid://1q2uj2uvt71u" path="res://assets/sprites/Personnages/El Yaagoubi/el_yagoubi_taking_damage3.png" id="40_damage3"]
+[ext_resource type="Texture2D" uid="uid://de3ku2qupfee3" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_attaque3.png" id="40_kbap4"]
+[ext_resource type="Texture2D" uid="uid://cci38r3tg71h1" path="res://assets/sprites/Personnages/El Yaagoubi/el_yagoubi_taking_damage4.png" id="41_damage4"]
+[ext_resource type="Texture2D" uid="uid://chkv1u2p64sp8" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_attaque4.png" id="41_x57la"]
+[ext_resource type="Texture2D" uid="uid://cf2ydh1ca4nm" path="res://assets/sprites/Personnages/El Yaagoubi/el_yagoubi_taking_damage5.png" id="42_damage5"]
+[ext_resource type="Texture2D" uid="uid://d0rchafmw6riu" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi__attaque2.png" id="42_s2242"]
+[ext_resource type="Texture2D" uid="uid://t7e71ry3ri3i" path="res://assets/sprites/Personnages/El Yaagoubi/el_yagoubi_taking_damage6.png" id="43_damage6"]
+[ext_resource type="Texture2D" uid="uid://p06di1aheiif" path="res://assets/sprites/Personnages/El Yaagoubi/el_yagoubi_taking_damage7.png" id="44_damage7"]
+[ext_resource type="Texture2D" uid="uid://6x7hrp2j1b5j" path="res://assets/sprites/Personnages/El Yaagoubi/el_yagoubi_taking_damage8.png" id="45_damage8"]
+[ext_resource type="Texture2D" uid="uid://svknbpuarr65" path="res://assets/sprites/Personnages/El Yaagoubi/el_yagoubi_taking_damage9.png" id="46_damage9"]
+[ext_resource type="Script" uid="uid://d1g2ky5ris2sd" path="res://scripts/hitbox.gd" id="56_hitbox"]
+[ext_resource type="Texture2D" uid="uid://bxto6rtxbakwd" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_grab1.png" id="57_climb1"]
+[ext_resource type="Texture2D" uid="uid://dadbooc5mds2u" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_grab2.png" id="58_climb2"]
+[ext_resource type="Texture2D" uid="uid://baw50o864ebrc" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_grab3.png" id="59_climb3"]
+[ext_resource type="Texture2D" uid="uid://wctgvllxys4u" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_grab4.png" id="60_climb4"]
+[ext_resource type="Texture2D" uid="uid://cj285adbo60ic" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_grab5.png" id="61_climb5"]
+[ext_resource type="Texture2D" uid="uid://b0oe7pemoji7t" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_grab6.png" id="62_climb6"]
+[ext_resource type="Texture2D" uid="uid://b1eh1lnohu06x" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_grab7.png" id="63_climb7"]
+[ext_resource type="Texture2D" uid="uid://dyql6gooqsoot" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_grab8.png" id="64_climb8"]
+[ext_resource type="Texture2D" uid="uid://sd8tnn6hd85k" path="res://assets/sprites/Personnages/El Yaagoubi/el_yaagoubi_grab9.png" id="65_climb9"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owota"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_damage1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_damage2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_damage3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_damage4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_damage5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_damage6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_damage7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_damage8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_damage9")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_climb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_climb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_climb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_climb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_climb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_climb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_climb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_climb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_climb9")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_dash1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_dash2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dash3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dash4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_dash5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_dash6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_dash7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_dash8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_dash9")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 25.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_jump6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_jump7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_jump8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_jump9")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_idle1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idle3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_idle4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_idle5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_idle6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_idle7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_idle8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_idle9")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_jump1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_jump2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jump3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jump4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_jump5")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"ledge_gap",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_8q7o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_20j6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_kbap4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_x57la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_s2242")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_walk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_walk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_walk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_walk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_walk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_walk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_walk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_walk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_walk9")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 36.0
+height = 94.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_60jth"]
+radius = 45.0
+height = 116.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_melee"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ledge"]
+size = Vector2(20, 20)
+
+[node name="Player" type="CharacterBody2D" unique_id=2041489519]
+script = ExtResource("1_60jth")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1664251423]
+position = Vector2(0, -23)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_owota")
+animation = &"melee"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=618495778]
+position = Vector2(-3, -13)
+shape = SubResource("CapsuleShape2D_3vyb7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=217822082]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1784399389]
+position = Vector2(-1, -10)
+shape = SubResource("CapsuleShape2D_60jth")
+
+[node name="MeleeArea" type="Area2D" parent="." unique_id=1138154590]
+unique_name_in_owner = true
+position = Vector2(40, -20)
+monitoring = false
+monitorable = false
+script = ExtResource("56_hitbox")
+attack_type = "melee"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea" unique_id=1766699950]
+shape = SubResource("CircleShape2D_melee")
+
+[node name="LedgeDetector" type="Area2D" parent="." unique_id=2041489520]
+position = Vector2(20, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LedgeDetector" unique_id=2041489521]
+shape = SubResource("RectangleShape2D_ledge")

@@ -1,0 +1,305 @@
+[gd_scene format=3 uid="uid://ctylc4atkguf3"]
+
+[ext_resource type="Script" uid="uid://df0x01wofo0yv" path="res://scripts/Benedito.gd" id="1_fmvww"]
+[ext_resource type="Texture2D" uid="uid://142w2upnvo7b" path="res://assets/sprites/Personnages/Benedito/Benedito fixe 1.png" id="2_a0cdt"]
+[ext_resource type="PackedScene" uid="uid://cgxc3f0d46iga" path="res://scenes/tir_benedito.tscn" id="2_k63vh"]
+[ext_resource type="AudioStream" uid="uid://d22qfmoki78nb" path="res://assets/audio/voicelines/Benedito/dimension-energie_benedito.wav" id="3_3b4ik"]
+[ext_resource type="Texture2D" uid="uid://rxw8ma50x1ka" path="res://assets/sprites/Personnages/Benedito/benedito_taking_damage1.png" id="3_od34w"]
+[ext_resource type="Texture2D" uid="uid://vli6rm5wmmri" path="res://assets/sprites/Personnages/Benedito/Benedito fixe 2.png" id="3_s4kpk"]
+[ext_resource type="Texture2D" uid="uid://bb4j03hbe0r0m" path="res://assets/sprites/Personnages/Benedito/Benedito fixe 3.png" id="4_fmvww"]
+[ext_resource type="AudioStream" uid="uid://h1aknnwo6ed5" path="res://assets/audio/voicelines/Benedito/eventail_benedito.wav" id="4_l44pc"]
+[ext_resource type="Texture2D" uid="uid://dakaf0esypqx1" path="res://assets/sprites/Personnages/Benedito/benedito_taking_damage2.png" id="4_sgmgm"]
+[ext_resource type="Texture2D" uid="uid://ctcssxk4e5pp5" path="res://assets/sprites/Personnages/Benedito/Benedito fixe 4.png" id="5_k63vh"]
+[ext_resource type="AudioStream" uid="uid://rpxqokcdfes4" path="res://assets/audio/voicelines/Benedito/Girou_benedito.wav" id="5_lpfev"]
+[ext_resource type="Texture2D" uid="uid://drwia5vmjp38r" path="res://assets/sprites/Personnages/Benedito/benedito_taking_damage3.png" id="5_punq1"]
+[ext_resource type="AudioStream" uid="uid://1tn07bh07qop" path="res://assets/audio/voicelines/Benedito/pli_en_4_benedito.wav" id="6_3w8v5"]
+[ext_resource type="Texture2D" uid="uid://d2rla4wf3s0cw" path="res://assets/sprites/Personnages/Benedito/benedito_taking_damage4.png" id="6_xfrsf"]
+[ext_resource type="Texture2D" uid="uid://cwhie2xe2qc32" path="res://assets/sprites/Personnages/Benedito/benedito_taking_damage5.png" id="7_3ngh5"]
+[ext_resource type="Texture2D" uid="uid://djfj3gx242rge" path="res://assets/sprites/Personnages/Benedito/Benedito_walk1.png" id="8_cdfxp"]
+[ext_resource type="Texture2D" uid="uid://deq8mt2moowpy" path="res://assets/sprites/Personnages/Benedito/benedito_taking_damage6.png" id="8_osb3s"]
+[ext_resource type="Texture2D" uid="uid://ds8lom12lg054" path="res://assets/sprites/Personnages/Benedito/benedito_taking_damage7.png" id="9_6l5bh"]
+[ext_resource type="Texture2D" uid="uid://b5pa56bn5iwoe" path="res://assets/sprites/Personnages/Benedito/Benedito_walk2.png" id="9_qpi2c"]
+[ext_resource type="Texture2D" uid="uid://botup0yx571el" path="res://assets/sprites/Personnages/Benedito/Benedito_walk3.png" id="10_a1y3y"]
+[ext_resource type="Texture2D" uid="uid://4hebxf3g50kx" path="res://assets/sprites/Personnages/Benedito/benedito_taking_damage8.png" id="10_gprmt"]
+[ext_resource type="Texture2D" uid="uid://dc41scyuplsuy" path="res://assets/sprites/Personnages/Benedito/benedito_taking_damage9.png" id="11_snfkf"]
+[ext_resource type="Texture2D" uid="uid://im8p8qm46uw5" path="res://assets/sprites/Personnages/Benedito/Benedito_walk4.png" id="11_varru"]
+[ext_resource type="Texture2D" uid="uid://bwe1jvl37q8ek" path="res://assets/sprites/Personnages/Benedito/Benedito_dashing1.png" id="12_6l5bh"]
+[ext_resource type="Texture2D" uid="uid://bj6ggwepmuyjd" path="res://assets/sprites/Personnages/Benedito/benedito_jump7.png" id="12_dbpvu"]
+[ext_resource type="Texture2D" uid="uid://c3pxgs7dske1h" path="res://assets/sprites/Personnages/Benedito/Benedito_walk5.png" id="12_e0322"]
+[ext_resource type="Texture2D" uid="uid://cgd1fh73uddec" path="res://assets/sprites/Personnages/Benedito/Benedito_walk6.png" id="13_7628g"]
+[ext_resource type="Texture2D" uid="uid://bolmhl2djkgf2" path="res://assets/sprites/Personnages/Benedito/Benedito_dashing2.png" id="13_gprmt"]
+[ext_resource type="Texture2D" uid="uid://btcw6sba6aptk" path="res://assets/sprites/Personnages/Benedito/benedito_jump8.png" id="13_i7vfh"]
+[ext_resource type="Texture2D" uid="uid://doaygx43stopi" path="res://assets/sprites/Personnages/Benedito/benedito_jump9.png" id="14_3b4ik"]
+[ext_resource type="Texture2D" uid="uid://crr640e4cf063" path="res://assets/sprites/Personnages/Benedito/Benedito_walk7.png" id="14_a161r"]
+[ext_resource type="Texture2D" uid="uid://5fegschg1awi" path="res://assets/sprites/Personnages/Benedito/Benedito_dashing3.png" id="14_snfkf"]
+[ext_resource type="Texture2D" uid="uid://bwn08ncmenn22" path="res://assets/sprites/Personnages/Benedito/Benedito_dashing4.png" id="15_dbpvu"]
+[ext_resource type="Texture2D" uid="uid://b8y77d2bdsiqu" path="res://assets/sprites/Personnages/Benedito/Benedito_walk8.png" id="15_nqa2p"]
+[ext_resource type="Texture2D" uid="uid://cbad0184wq8u6" path="res://assets/sprites/Personnages/Benedito/Benedito_walk9.png" id="16_3tyuy"]
+[ext_resource type="Texture2D" uid="uid://bkdjrtcmvug2j" path="res://assets/sprites/Personnages/Benedito/Benedito_dashing5.png" id="16_i7vfh"]
+[ext_resource type="Texture2D" uid="uid://871aqvivviyx" path="res://assets/sprites/Personnages/Benedito/Benedito_dashing6.png" id="17_3b4ik"]
+[ext_resource type="Texture2D" uid="uid://fcugds7b5fug" path="res://assets/sprites/Personnages/Benedito/Benedito_dashing7.png" id="18_l44pc"]
+[ext_resource type="Texture2D" uid="uid://do20e6yina77b" path="res://assets/sprites/Personnages/Benedito/Benedito_jump2.png" id="20_lpfev"]
+[ext_resource type="Texture2D" uid="uid://cdal2ob0jy2vt" path="res://assets/sprites/Personnages/Benedito/Benedito_jump3.png" id="21_3w8v5"]
+[ext_resource type="Texture2D" uid="uid://c1h8thl7t2elt" path="res://assets/sprites/Personnages/Benedito/Benedito_jump4.png" id="22_lm64g"]
+[ext_resource type="Texture2D" uid="uid://ev4hslqlt4sj" path="res://assets/sprites/Personnages/Benedito/Benedito_jump5.png" id="23_ev7nt"]
+[ext_resource type="Texture2D" uid="uid://dtbh1a8ihn2k7" path="res://assets/sprites/Personnages/Benedito/benedito_jump6.png" id="24_b06wc"]
+[ext_resource type="Script" uid="uid://d1g2ky5ris2sd" path="res://scripts/hitbox.gd" id="25"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owota"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_6l5bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gprmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_snfkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dbpvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_i7vfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3b4ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_l44pc")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_od34w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sgmgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_punq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xfrsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3ngh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_osb3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6l5bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gprmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_snfkf")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_6l5bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gprmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_snfkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dbpvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_i7vfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3b4ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_l44pc")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_dbpvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i7vfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3b4ik")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_a0cdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s4kpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fmvww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k63vh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_lpfev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3w8v5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_lm64g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ev7nt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_b06wc")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"ledge_gap",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_6l5bh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gprmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_snfkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dbpvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_i7vfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3b4ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_l44pc")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_cdfxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qpi2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_a1y3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_varru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_e0322")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7628g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_a161r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nqa2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3tyuy")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 17.0
+height = 92.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmvww"]
+radius = 28.0
+height = 110.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7m8n1"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ledge"]
+
+[node name="Benedito" type="CharacterBody2D" unique_id=2041489519]
+script = ExtResource("1_fmvww")
+tir = ExtResource("2_k63vh")
+voice_select = ExtResource("3_3b4ik")
+voice_hurt = ExtResource("4_l44pc")
+voice_special = ExtResource("5_lpfev")
+voice_die = ExtResource("6_3w8v5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1664251423]
+position = Vector2(3, -15)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_owota")
+animation = &"jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=618495778]
+position = Vector2(9, -7)
+shape = SubResource("CapsuleShape2D_3vyb7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=115396730]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1036214767]
+position = Vector2(7, -7)
+shape = SubResource("CapsuleShape2D_fmvww")
+
+[node name="MeleeArea" type="Area2D" parent="." unique_id=483653504]
+position = Vector2(40, -20)
+monitoring = false
+monitorable = false
+script = ExtResource("25")
+attack_type = "melee"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea" unique_id=147839860]
+shape = SubResource("CircleShape2D_7m8n1")
+
+[node name="LedgeDetector" type="Area2D" parent="." unique_id=2041489520]
+position = Vector2(20, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LedgeDetector" unique_id=2041489521]
+shape = SubResource("RectangleShape2D_ledge")

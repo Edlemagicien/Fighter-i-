@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://gifh7u62cy7j"]
+
+[ext_resource type="Script" uid="uid://d0vnc5c0njw4y" path="res://scripts/justine_projectile.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://fknpbqg5w5a7" path="res://assets/sprites/Personnages/Justine/Justine_attack_chat3.png" id="2_img"]
+[ext_resource type="Texture2D" uid="uid://c2qkorb571e7y" path="res://assets/sprites/Personnages/Justine/Justine_attack_chat4.png" id="3_img"]
+[ext_resource type="Texture2D" uid="uid://d1nb8rbupu8kn" path="res://assets/sprites/Personnages/Justine/Justine_attack_chat5.png" id="4_img"]
+[ext_resource type="Texture2D" uid="uid://dhu8wm2gtalbd" path="res://assets/sprites/Personnages/Justine/Justine_attack_chat6.png" id="5_img"]
+[ext_resource type="Texture2D" uid="uid://cxki8nlqqgmm" path="res://assets/sprites/Personnages/Justine/Justine_attack_chat7.png" id="6_img"]
+[ext_resource type="Texture2D" uid="uid://ch08w5p4paw8m" path="res://assets/sprites/Personnages/Justine/Justine_attack_chat8.png" id="7_img"]
+[ext_resource type="Texture2D" uid="uid://b73l3hy1t5m5c" path="res://assets/sprites/Personnages/Justine/Justine_attack_chat9.png" id="8_img"]
+[ext_resource type="Texture2D" uid="uid://c1yp28kwa17p3" path="res://assets/sprites/Personnages/Justine/Justine_attack_chat10.png" id="9_img"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_img")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_img")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_img")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_img")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_img")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_img")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_img")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_img")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cat"]
+radius = 15.0
+
+[node name="JustineProjectile" type="Area2D" unique_id=988196920]
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=113066737]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_cat")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=830826613]
+shape = SubResource("CircleShape2D_cat")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

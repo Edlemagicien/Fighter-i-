@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bpxrvb0ixwo1v"]
+
+[ext_resource type="Texture2D" uid="uid://rs0ugctt76l6" path="res://assets/sprites/plateforme1.png" id="1_axnur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiyqh"]
+size = Vector2(160, 21)
+
+[sub_resource type="Animation" id="Animation_wiyqh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c30i6"]
+resource_name = "move"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-250, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4ws0n"]
+resource_name = "move2"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(300, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ws0n"]
+_data = {
+&"RESET": SubResource("Animation_wiyqh"),
+&"move": SubResource("Animation_c30i6"),
+&"move2": SubResource("Animation_4ws0n")
+}
+
+[node name="Plateforme" type="Node2D" unique_id=172428346]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1939912043]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=352615744]
+scale = Vector2(5, 0.648)
+texture = ExtResource("1_axnur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=929413730]
+shape = SubResource("RectangleShape2D_wiyqh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" unique_id=19003126]
+libraries/ = SubResource("AnimationLibrary_4ws0n")
+autoplay = &"move"

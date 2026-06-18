@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://clq71xgfi2vn8"]
+
+[ext_resource type="Script" uid="uid://caxrod4y2bpmb" path="res://scripts/core/main.gd" id="1_fgbdc"]
+[ext_resource type="AudioStream" uid="uid://dayxto7vo8ecb" path="res://assets/menu_son_fi.mp3" id="2_i4cec"]
+[ext_resource type="AudioStream" uid="uid://c2td4gxrjfvxv" path="res://assets/fight_I_intro.mp3" id="3_intro"]
+
+[node name="Main" type="Node" unique_id=1652334905 node_paths=PackedStringArray("transition_rect")]
+script = ExtResource("1_fgbdc")
+transition_rect = NodePath("TransitionLayer/ColorRect")
+music_splash = ExtResource("3_intro")
+music_menu = ExtResource("2_i4cec")
+
+[node name="Stage" type="Node" parent="." unique_id=623223610]
+
+[node name="Screens" type="CanvasLayer" parent="." unique_id=588998182]
+
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=999999999]
+layer = 100
+
+[node name="ColorRect" type="ColorRect" parent="TransitionLayer" unique_id=888888888]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=777777777]
+bus = &"Music"

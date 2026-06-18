@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://csrgihefs44o6"]
+
+[ext_resource type="Script" uid="uid://574anofgkrxl" path="res://scripts/cookie_dubois.gd" id="1_f1itv"]
+[ext_resource type="Texture2D" uid="uid://bnpv83w88cds2" path="res://assets/sprites/Personnages/Dubois/Cookie 1.png" id="1_y1sxg"]
+[ext_resource type="Texture2D" uid="uid://dae67jaw21fb6" path="res://assets/sprites/Personnages/Dubois/Cookie 2.png" id="2_f1itv"]
+[ext_resource type="Texture2D" uid="uid://qcnhpp8lj86j" path="res://assets/sprites/Personnages/Dubois/Cookie 3.png" id="3_gcrol"]
+[ext_resource type="Texture2D" uid="uid://gudhq714pcvr" path="res://assets/sprites/Personnages/Dubois/Cookie 4.png" id="4_oa6yl"]
+[ext_resource type="Texture2D" uid="uid://8ocakim10d4f" path="res://assets/sprites/Personnages/Dubois/Cookie 5.png" id="5_0qmmv"]
+[ext_resource type="Texture2D" uid="uid://vyugqd2e15i6" path="res://assets/sprites/Personnages/Dubois/Cookie 6.png" id="6_agprj"]
+[ext_resource type="Texture2D" uid="uid://df3lbh8nq5c0a" path="res://assets/sprites/Personnages/Dubois/Cookie 7.png" id="7_l0b6u"]
+[ext_resource type="Texture2D" uid="uid://dgb0aswjdfiha" path="res://assets/sprites/Personnages/Dubois/Cookie 8.png" id="8_ng58s"]
+[ext_resource type="Texture2D" uid="uid://cucqqpdyitpds" path="res://assets/sprites/Personnages/Dubois/Cookie 9.png" id="9_c3kg6"]
+[ext_resource type="Texture2D" uid="uid://dqo7b8vumjrfs" path="res://assets/sprites/Personnages/Dubois/Cookie 10.png" id="10_jxl1g"]
+[ext_resource type="Texture2D" uid="uid://st3640txpx22" path="res://assets/sprites/Personnages/Dubois/Cookie 11.png" id="11_yx1ed"]
+[ext_resource type="Texture2D" uid="uid://m05tjfmgy2gf" path="res://assets/sprites/Personnages/Dubois/Cookie 12.png" id="12_8tvgk"]
+[ext_resource type="Texture2D" uid="uid://qdmteoh16gcl" path="res://assets/sprites/Personnages/Dubois/Cookie 13.png" id="13_yvw1j"]
+[ext_resource type="Texture2D" uid="uid://x452jvb3qh6s" path="res://assets/sprites/Personnages/Dubois/Cookie 14.png" id="14_1ujaj"]
+[ext_resource type="Texture2D" uid="uid://y6ynar5l3ymy" path="res://assets/sprites/Personnages/Dubois/Cookie 15.png" id="15_1rx3j"]
+[ext_resource type="Texture2D" uid="uid://t7jop7tlgod6" path="res://assets/sprites/Personnages/Dubois/Cookie 16.png" id="16_t1ykx"]
+[ext_resource type="Texture2D" uid="uid://pu31ref3ub88" path="res://assets/sprites/Personnages/Dubois/Cookie 17.png" id="17_rejrp"]
+[ext_resource type="Texture2D" uid="uid://c7u0cidebmg0d" path="res://assets/sprites/Personnages/Dubois/Cookie 18.png" id="18_0urh4"]
+[ext_resource type="Texture2D" uid="uid://2800wyd688gk" path="res://assets/sprites/Personnages/Dubois/Cookie 19.png" id="19_p2vrt"]
+[ext_resource type="Texture2D" uid="uid://dko0l8mu4cwrf" path="res://assets/sprites/Personnages/Dubois/Cookie 20.png" id="20_kx5bc"]
+[ext_resource type="Texture2D" uid="uid://cvtpt0lnmngjy" path="res://assets/sprites/Personnages/Dubois/Cookie 21.png" id="21_vke6j"]
+[ext_resource type="Texture2D" uid="uid://dkyfhpw1d7ixp" path="res://assets/sprites/Personnages/Dubois/Cookie 22.png" id="22_0kks1"]
+[ext_resource type="Texture2D" uid="uid://me567cfaw6xi" path="res://assets/sprites/Personnages/Dubois/Cookie 23.png" id="23_iq7h7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_moqs6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y1sxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f1itv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gcrol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oa6yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0qmmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_agprj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l0b6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ng58s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c3kg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jxl1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yx1ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8tvgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yvw1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1ujaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1rx3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_t1ykx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rejrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0urh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_p2vrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_kx5bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_vke6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_0kks1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_iq7h7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aevum"]
+radius = 15.033297
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fd3sy"]
+radius = 22.090721
+
+[node name="CookieDubois" type="Area2D" unique_id=1794757852]
+script = ExtResource("1_f1itv")
+
+[node name="projectile" type="AnimatedSprite2D" parent="." unique_id=1535279274]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_moqs6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=848428369]
+position = Vector2(-2, 4)
+shape = SubResource("CircleShape2D_aevum")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1002048364]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=171729533]
+position = Vector2(-3, 0)
+shape = SubResource("CircleShape2D_fd3sy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://y80ph74gva8a"]
+
+[ext_resource type="Script" uid="uid://dmh0nbup5qum3" path="res://scripts/ui/match_rules_menu.gd" id="1_rscript"]
+[ext_resource type="Texture2D" uid="uid://df5gfpqrctdr7" path="res://assets/art/ui/menu_background.png" id="2_bg"]
+[ext_resource type="FontFile" uid="uid://d4beyjxkjfg6p" path="res://assets/fonts/perfect_dos_vga_437.ttf" id="3_font"]
+
+[node name="MatchRulesMenu" type="Control" unique_id=2112677257 node_paths=PackedStringArray("stocks_label", "time_label", "stocks_minus_btn", "stocks_plus_btn", "time_minus_btn", "time_plus_btn", "next_button", "back_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rscript")
+stocks_label = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Settings/StocksContainer/Value")
+time_label = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Settings/TimeContainer/Value")
+stocks_minus_btn = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Settings/StocksContainer/Minus")
+stocks_plus_btn = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Settings/StocksContainer/Plus")
+time_minus_btn = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Settings/TimeContainer/Minus")
+time_plus_btn = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Settings/TimeContainer/Plus")
+next_button = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Buttons/NextButton")
+back_button = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Buttons/BackButton")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1774937375]
+modulate = Color(0.5, 0.5, 0.5, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=46208525]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="CenterContainer" type="PanelContainer" parent="MarginContainer" unique_id=1219053314]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer" unique_id=2037810463]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Menu" type="VBoxContainer" parent="MarginContainer/CenterContainer/MarginContainer" unique_id=845055407]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/MarginContainer/Menu" unique_id=1825746196]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 48
+text = "Regles du Match"
+horizontal_alignment = 1
+
+[node name="Settings" type="VBoxContainer" parent="MarginContainer/CenterContainer/MarginContainer/Menu" unique_id=1714949946]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="StocksContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Settings" unique_id=107967791]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Settings/StocksContainer" unique_id=155169621]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "Vies :"
+
+[node name="Minus" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Settings/StocksContainer" unique_id=1124339845]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "<"
+
+[node name="Value" type="Label" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Settings/StocksContainer" unique_id=1762595565]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "3"
+horizontal_alignment = 1
+
+[node name="Plus" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Settings/StocksContainer" unique_id=312846182]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = ">"
+
+[node name="TimeContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Settings" unique_id=790872504]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Settings/TimeContainer" unique_id=1411636145]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "Temps :"
+
+[node name="Minus" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Settings/TimeContainer" unique_id=702568046]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "<"
+
+[node name="Value" type="Label" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Settings/TimeContainer" unique_id=550132632]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "3 Min"
+horizontal_alignment = 1
+
+[node name="Plus" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Settings/TimeContainer" unique_id=297053134]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = ">"
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/CenterContainer/MarginContainer/Menu" unique_id=324614517]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BackButton" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Buttons" unique_id=1102731014]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "RETOUR"
+
+[node name="NextButton" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Buttons" unique_id=1919466804]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "SUIVANT"

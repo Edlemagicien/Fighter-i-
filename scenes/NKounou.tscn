@@ -1,0 +1,387 @@
+[gd_scene load_steps=64 format=3 uid="uid://3gavtdcsrb1c"]
+
+[ext_resource type="Script" uid="uid://delfvbpua7ty6" path="res://scripts/n_kounou.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://csrgihefs44o6" path="res://scenes/cookie_dubois.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://bxpe8xdk56eik" path="res://assets/sprites/Personnages/N Kounou/nkounou_idle.webp" id="3"]
+[ext_resource type="Texture2D" uid="uid://cwa0fg5cmsnup" path="res://assets/sprites/Personnages/N Kounou/nkounou_idle 2.webp" id="4"]
+[ext_resource type="Texture2D" uid="uid://dupliu6l8ghjt" path="res://assets/sprites/Personnages/N Kounou/nkounou_idle 3.webp" id="5"]
+[ext_resource type="Texture2D" uid="uid://crpq3gfsy83gj" path="res://assets/sprites/Personnages/N Kounou/nkounou_idle 4.webp" id="6"]
+[ext_resource type="Texture2D" uid="uid://dmpo5bwwlm3d7" path="res://assets/sprites/Personnages/N Kounou/nkounou_idle 5.webp" id="7"]
+[ext_resource type="Texture2D" uid="uid://dkkyoi85k0ofp" path="res://assets/sprites/Personnages/N Kounou/nkounou_idle 6.webp" id="8"]
+[ext_resource type="Texture2D" uid="uid://eq315a5238t0" path="res://assets/sprites/Personnages/N Kounou/nkounou_idle 7.webp" id="9"]
+[ext_resource type="Texture2D" uid="uid://8bbdd6ummsov" path="res://assets/sprites/Personnages/N Kounou/nkounou_idle 8.webp" id="10"]
+[ext_resource type="Texture2D" uid="uid://7j6k71xqrmna" path="res://assets/sprites/Personnages/N Kounou/nkounou_idle 10.webp" id="11"]
+[ext_resource type="Texture2D" uid="uid://cu4fkhvnrwkqb" path="res://assets/sprites/Personnages/N Kounou/nkounou_attack1.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://bgoa0k134msw4" path="res://assets/sprites/Personnages/N Kounou/nkounou_attack2.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://dnbs1v87p37ke" path="res://assets/sprites/Personnages/N Kounou/nkounou_attack3.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://png3q05bqqwi" path="res://assets/sprites/Personnages/N Kounou/nkounou_attack4.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://cnup4jg7bxfua" path="res://assets/sprites/Personnages/N Kounou/nkounou_attack5.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://hmhgrxc48k8t" path="res://assets/sprites/Personnages/N Kounou/nkounou_attack6.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bqp2wfgdd36ki" path="res://assets/sprites/Personnages/N Kounou/nkounou_attack7.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://cmgcs4kb7d2ir" path="res://assets/sprites/Personnages/N Kounou/nkounou_attack8.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://bla1cxw08lgxr" path="res://assets/sprites/Personnages/N Kounou/nkounou_attack9.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://betd3np0g4i7s" path="res://assets/sprites/Personnages/N Kounou/nkounou_dashing1.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://cwh2808o26308" path="res://assets/sprites/Personnages/N Kounou/nkounou_dashing2.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://cq0g5ed8tu8k5" path="res://assets/sprites/Personnages/N Kounou/nkounou_dashing3.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://catxujovib8lc" path="res://assets/sprites/Personnages/N Kounou/nkounou_dashing4.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://c427fskscbxnf" path="res://assets/sprites/Personnages/N Kounou/nkounou_dashing5.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://bwpklnm8emt07" path="res://assets/sprites/Personnages/N Kounou/nkounou_dashing6.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://7wavhm48frwk" path="res://assets/sprites/Personnages/N Kounou/nkounou_dashing7.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://dycnyvali1q3u" path="res://assets/sprites/Personnages/N Kounou/nkounou_dashing8.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://ctcvi47ox74h" path="res://assets/sprites/Personnages/N Kounou/nkounou_dashing9.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://dt0cy7fecnkuo" path="res://assets/sprites/Personnages/N Kounou/nkounou_jump1.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://blv5v6giipe5t" path="res://assets/sprites/Personnages/N Kounou/nkounou_jump2.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://myyrusnmgjhg" path="res://assets/sprites/Personnages/N Kounou/nkounou_jump3.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://bqgu6qbqwvxe5" path="res://assets/sprites/Personnages/N Kounou/nkounou_jump4.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://dfvp06crrqbku" path="res://assets/sprites/Personnages/N Kounou/nkounou_jump5.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://b0hsah766kvld" path="res://assets/sprites/Personnages/N Kounou/nkounou_jump6.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://ds78ahjl7hc22" path="res://assets/sprites/Personnages/N Kounou/nkounou_jump7.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://bmmjh5jmp05bq" path="res://assets/sprites/Personnages/N Kounou/nkounou_jump8.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://clm1sc4cpt0m3" path="res://assets/sprites/Personnages/N Kounou/nkounou_jump9.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://bd3xp0yom07yl" path="res://assets/sprites/Personnages/N Kounou/nkounou_jump10.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://d3eqjblkjq7ox" path="res://assets/sprites/Personnages/N Kounou/nkounou_taking_damage1.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://detxc6ouxam1r" path="res://assets/sprites/Personnages/N Kounou/nkounou_taking_damage2.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://naqwwaukx7ab" path="res://assets/sprites/Personnages/N Kounou/nkounou_taking_damage3.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://dx2g7fdmbua11" path="res://assets/sprites/Personnages/N Kounou/nkounou_taking_damage4.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://dmw1hmxij8jp7" path="res://assets/sprites/Personnages/N Kounou/nkounou_taking_damage5.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://b5l5eji02q8xn" path="res://assets/sprites/Personnages/N Kounou/nkounou_taking_damage6.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://pftwqujd261c" path="res://assets/sprites/Personnages/N Kounou/nkounou_taking_damage7.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://kc7ycto51o8e" path="res://assets/sprites/Personnages/N Kounou/nkounou_taking_damage8.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://bg27hfxi75pwe" path="res://assets/sprites/Personnages/N Kounou/nkounou_taking_damage9.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://bpsbxjkeq6abr" path="res://assets/sprites/Personnages/N Kounou/nkounou_walking1.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://cnsll2x8pexox" path="res://assets/sprites/Personnages/N Kounou/nkounou_walking2.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://seqq8ruw3kja" path="res://assets/sprites/Personnages/N Kounou/nkounou_walking3.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://dxa1vabsmaryc" path="res://assets/sprites/Personnages/N Kounou/nkounou_walking4.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://kch7hxeriy6a" path="res://assets/sprites/Personnages/N Kounou/nkounou_walking5.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://dk3ftqk05ivkc" path="res://assets/sprites/Personnages/N Kounou/nkounou_walking6.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://0p6lvm2vt8pe" path="res://assets/sprites/Personnages/N Kounou/nkounou_walking7.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://bxbncq6jjlxbw" path="res://assets/sprites/Personnages/N Kounou/nkounou_walking8.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://dhy5igklrm8lg" path="res://assets/sprites/Personnages/N Kounou/nkounou_walking9.png" id="57"]
+[ext_resource type="Script" uid="uid://d1g2ky5ris2sd" path="res://scripts/hitbox.gd" id="58"]
+[ext_resource type="Texture2D" uid="uid://ubtvihqr6h3x" path="res://assets/sprites/Personnages/N Kounou/nkounou_climb1.png" id="59"]
+[ext_resource type="Texture2D" uid="uid://ctvsmcrrwbdeb" path="res://assets/sprites/Personnages/N Kounou/nkounou_climb2.png" id="60"]
+[ext_resource type="Texture2D" uid="uid://dfpiukxj0grpn" path="res://assets/sprites/Personnages/N Kounou/nkounou_climb3.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://2xmvwail0kdd" path="res://assets/sprites/Personnages/N Kounou/nkounou_climb4.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://b5y8qlvamg0a2" path="res://assets/sprites/Personnages/N Kounou/nkounou_climb5.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://blbjer75up7i0" path="res://assets/sprites/Personnages/N Kounou/nkounou_climb6.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://ckkd6rb6f2q7g" path="res://assets/sprites/Personnages/N Kounou/nkounou_climb7.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://cwogob1e68epv" path="res://assets/sprites/Personnages/N Kounou/nkounou_climb8.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://bkewip0fqker1" path="res://assets/sprites/Personnages/N Kounou/nkounou_climb9.png" id="67"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34wqp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
+radius = 18.0
+height = 100.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nak3"]
+radius = 24.0
+height = 100.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7m8n1"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ledge"]
+size = Vector2(20, 20)
+
+[node name="Player" type="CharacterBody2D" unique_id=2041489519]
+script = ExtResource("1")
+cookie_dubois = ExtResource("2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1857223151]
+position = Vector2(-4.5, -2.0902786)
+scale = Vector2(0.45833334, 0.47453704)
+sprite_frames = SubResource("SpriteFrames_34wqp")
+animation = &"idle"
+offset = Vector2(0, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=618495778]
+position = Vector2(-3, -17)
+shape = SubResource("CapsuleShape2D_3vyb7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=13979002]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=429060738]
+position = Vector2(-4, -17)
+shape = SubResource("CapsuleShape2D_6nak3")
+
+[node name="MeleeArea" type="Area2D" parent="."]
+position = Vector2(40, -20)
+monitoring = false
+monitorable = false
+script = ExtResource("58")
+attack_type = "melee"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea"]
+shape = SubResource("CircleShape2D_7m8n1")
+
+[node name="LedgeDetector" type="Area2D" parent="." unique_id=2041489520]
+position = Vector2(20, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LedgeDetector" unique_id=2041489521]
+shape = SubResource("RectangleShape2D_ledge")

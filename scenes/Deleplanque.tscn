@@ -1,0 +1,331 @@
+[gd_scene format=3 uid="uid://dbdtf5nnbhmr7"]
+
+[ext_resource type="Script" uid="uid://hg5hh7v84a1h" path="res://scripts/Deleplanque.gd" id="1_deleplanque_script"]
+[ext_resource type="Texture2D" uid="uid://c5vxda8v3wk53" path="res://assets/sprites/Personnages/Deleplanque/Samuel_iddle1.png" id="2_idle1"]
+[ext_resource type="Texture2D" uid="uid://b3bff3vt88bk4" path="res://assets/sprites/Personnages/Deleplanque/Samuel_iddle2.png" id="3_idle2"]
+[ext_resource type="Texture2D" uid="uid://4fwoo7ludegp" path="res://assets/sprites/Personnages/Deleplanque/Samuel_iddle3.png" id="4_idle3"]
+[ext_resource type="Texture2D" uid="uid://0ggyl0ejv1xn" path="res://assets/sprites/Personnages/Deleplanque/Samuel_iddle4.png" id="5_idle4"]
+[ext_resource type="Texture2D" uid="uid://c3631ilcmvvp0" path="res://assets/sprites/Personnages/Deleplanque/Samuel_iddle5.png" id="6_idle5"]
+[ext_resource type="Texture2D" uid="uid://bvhwf7ruhg300" path="res://assets/sprites/Personnages/Deleplanque/Samuel_iddle6.png" id="7_idle6"]
+[ext_resource type="Texture2D" uid="uid://5gxo7wnyau4r" path="res://assets/sprites/Personnages/Deleplanque/Samuel_iddle7.png" id="8_idle7"]
+[ext_resource type="Texture2D" uid="uid://cese2oh80wnl" path="res://assets/sprites/Personnages/Deleplanque/Samuel_iddle8.png" id="9_idle8"]
+[ext_resource type="Texture2D" uid="uid://bju2rw4b2hryw" path="res://assets/sprites/Personnages/Deleplanque/Samuel_iddle9.png" id="10_idle9"]
+[ext_resource type="Texture2D" uid="uid://pigifyor0buk" path="res://assets/sprites/Personnages/Deleplanque/Samuel_walking1.png" id="11_walk1"]
+[ext_resource type="Texture2D" uid="uid://bilax4x2ef1l6" path="res://assets/sprites/Personnages/Deleplanque/Samuel_walking2.png" id="12_walk2"]
+[ext_resource type="Texture2D" uid="uid://tr2705algeoi" path="res://assets/sprites/Personnages/Deleplanque/Samuel_walking3.png" id="13_walk3"]
+[ext_resource type="Texture2D" uid="uid://d2afhaoup2nx3" path="res://assets/sprites/Personnages/Deleplanque/Samuel_walking4.png" id="14_walk4"]
+[ext_resource type="Texture2D" uid="uid://bo3ukvql06f4r" path="res://assets/sprites/Personnages/Deleplanque/Samuel_walking5.png" id="15_walk5"]
+[ext_resource type="Texture2D" uid="uid://dpoq8kiqo0vqe" path="res://assets/sprites/Personnages/Deleplanque/Samuel_walking6.png" id="16_walk6"]
+[ext_resource type="Texture2D" uid="uid://xaxhydxt7qyl" path="res://assets/sprites/Personnages/Deleplanque/Samuel_walking7.png" id="17_walk7"]
+[ext_resource type="Texture2D" uid="uid://7jbhp2nao61k" path="res://assets/sprites/Personnages/Deleplanque/Samuel_walking8.png" id="18_walk8"]
+[ext_resource type="Texture2D" uid="uid://dhbb11y1va4p1" path="res://assets/sprites/Personnages/Deleplanque/Samuel_walking9.png" id="19_walk9"]
+[ext_resource type="Texture2D" uid="uid://c787r1rmyrwm" path="res://assets/sprites/Personnages/Deleplanque/Samuel_jump1.png" id="20_jump1"]
+[ext_resource type="Texture2D" uid="uid://b6vuebkt7rg1m" path="res://assets/sprites/Personnages/Deleplanque/Samuel_jump2.png" id="21_jump2"]
+[ext_resource type="Texture2D" uid="uid://b125306he4u5a" path="res://assets/sprites/Personnages/Deleplanque/Samuel_jump3.png" id="22_jump3"]
+[ext_resource type="Texture2D" uid="uid://2nhn6mtw6ii6" path="res://assets/sprites/Personnages/Deleplanque/Samuel_jump4.png" id="23_jump4"]
+[ext_resource type="Texture2D" uid="uid://uxarjhw2bji1" path="res://assets/sprites/Personnages/Deleplanque/Samuel_jump5.png" id="24_fall1"]
+[ext_resource type="Texture2D" uid="uid://cf7opmausahy2" path="res://assets/sprites/Personnages/Deleplanque/Samuel_jump6.png" id="25_fall2"]
+[ext_resource type="Texture2D" uid="uid://cps5qj80tx0ns" path="res://assets/sprites/Personnages/Deleplanque/Samuel_jump7.png" id="26_fall3"]
+[ext_resource type="Texture2D" uid="uid://cxy4r3hwtsnet" path="res://assets/sprites/Personnages/Deleplanque/Samuel_jump8.png" id="27_fall4"]
+[ext_resource type="Texture2D" uid="uid://b7wnv5hnv8onp" path="res://assets/sprites/Personnages/Deleplanque/Samuel_dash1.png" id="28_dash1"]
+[ext_resource type="Texture2D" uid="uid://civp5ulkd3m2r" path="res://assets/sprites/Personnages/Deleplanque/Samuel_dash2.png" id="29_dash2"]
+[ext_resource type="Texture2D" uid="uid://cisa3fqfbx6fa" path="res://assets/sprites/Personnages/Deleplanque/Samuel_dash3.png" id="30_dash3"]
+[ext_resource type="Texture2D" uid="uid://iyoqmc6n2w7u" path="res://assets/sprites/Personnages/Deleplanque/Samuel_dash4.png" id="31_dash4"]
+[ext_resource type="Texture2D" uid="uid://cctw3e3lj74ip" path="res://assets/sprites/Personnages/Deleplanque/Samuel_dash5.png" id="32_dash5"]
+[ext_resource type="Texture2D" uid="uid://q8nd14frhik7" path="res://assets/sprites/Personnages/Deleplanque/Samuel_dash6.png" id="33_dash6"]
+[ext_resource type="Texture2D" uid="uid://bs0wcfu5evo3k" path="res://assets/sprites/Personnages/Deleplanque/Samuel_dash7.png" id="34_dash7"]
+[ext_resource type="Texture2D" uid="uid://d4f2i4etfdqnq" path="res://assets/sprites/Personnages/Deleplanque/Samuel_dash8.png" id="35_dash8"]
+[ext_resource type="Texture2D" uid="uid://dmawfh2dbn2r" path="res://assets/sprites/Personnages/Deleplanque/Samuel_dash9.png" id="36_dash9"]
+[ext_resource type="Texture2D" uid="uid://31p7yqtd2kyu" path="res://assets/sprites/Personnages/Deleplanque/samuel_climb1.png" id="37_climb1"]
+[ext_resource type="Texture2D" uid="uid://cpnp6qo1aqew7" path="res://assets/sprites/Personnages/Deleplanque/samuel_climb2.png" id="38_climb2"]
+[ext_resource type="Texture2D" uid="uid://dwmsm230tur28" path="res://assets/sprites/Personnages/Deleplanque/samuel_climb3.png" id="39_climb3"]
+[ext_resource type="Texture2D" uid="uid://celwbydwe1jb4" path="res://assets/sprites/Personnages/Deleplanque/samuel_climb4.png" id="40_climb4"]
+[ext_resource type="Texture2D" uid="uid://bweyiccetpljf" path="res://assets/sprites/Personnages/Deleplanque/samuel_climb5.png" id="41_climb5"]
+[ext_resource type="Texture2D" uid="uid://c4gid154tak24" path="res://assets/sprites/Personnages/Deleplanque/samuel_climb6.png" id="42_climb6"]
+[ext_resource type="Texture2D" uid="uid://drmxahwgscdkl" path="res://assets/sprites/Personnages/Deleplanque/samuel_climb7.png" id="43_climb7"]
+[ext_resource type="Texture2D" uid="uid://c3pv2i3jxgm1h" path="res://assets/sprites/Personnages/Deleplanque/samuel_climb8.png" id="44_climb8"]
+[ext_resource type="Texture2D" uid="uid://bqo1jcmh5xxdt" path="res://assets/sprites/Personnages/Deleplanque/samuel_climb9.png" id="45_climb9"]
+[ext_resource type="Script" uid="uid://d1g2ky5ris2sd" path="res://scripts/hitbox.gd" id="46"]
+[ext_resource type="Texture2D" uid="uid://t5h0ljmdn1fi" path="res://assets/sprites/Personnages/Deleplanque/Samuel_attackpng1.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://b47petnl17ilf" path="res://assets/sprites/Personnages/Deleplanque/deleplanque_attaque0.png" id="47_ovwsn"]
+[ext_resource type="Texture2D" uid="uid://c1ieh13prrwu3" path="res://assets/sprites/Personnages/Deleplanque/Samuel_attackpng2.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://bj52amplsvv3f" path="res://assets/sprites/Personnages/Deleplanque/deleplanque_attaque1.png" id="48_va41e"]
+[ext_resource type="Texture2D" uid="uid://cfce6hdbb5ang" path="res://assets/sprites/Personnages/Deleplanque/Samuel_attackpng3.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://d4v5ycpe8x7g" path="res://assets/sprites/Personnages/Deleplanque/deleplanque_attaque2.png" id="49_dvex4"]
+[ext_resource type="Texture2D" uid="uid://cxk1mdx77xa5e" path="res://assets/sprites/Personnages/Deleplanque/Samuel_attackpng4.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://dgjfajy1ct6n" path="res://assets/sprites/Personnages/Deleplanque/deleplanque_attaque3.png" id="50_xtjmp"]
+[ext_resource type="Texture2D" uid="uid://c4gkcm0gnv26r" path="res://assets/sprites/Personnages/Deleplanque/Samuel_attackpng5.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://dbneq2kgsybw5" path="res://assets/sprites/Personnages/Deleplanque/deleplanque_attaque4.png" id="51_ojonn"]
+[ext_resource type="Texture2D" uid="uid://1gi4skv256vb" path="res://assets/sprites/Personnages/Deleplanque/Samuel_attackpng6.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://cxg8th2oet8pg" path="res://assets/sprites/Personnages/Deleplanque/Samuel_attackpng7.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://dapbsmjuwjttp" path="res://assets/sprites/Personnages/Deleplanque/Samuel_attackpng8.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://d10kn842xrra5" path="res://assets/sprites/Personnages/Deleplanque/Samuel_attackpng9.png" id="55"]
+[ext_resource type="PackedScene" path="res://scenes/deleplanque_projectile.tscn" id="56"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_deleplanque"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_climb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_climb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_climb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_climb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_climb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_climb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_climb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_climb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_climb9")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_dash1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_dash2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_dash3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_dash4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_dash5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_dash6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dash7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_dash8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_dash9")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_fall1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_fall2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_fall3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fall4")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_idle1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idle3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_idle4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_idle5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_idle6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_idle7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_idle8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_idle9")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_jump1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_jump2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jump3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jump4")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_ovwsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_va41e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_dvex4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_xtjmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ojonn")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_walk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_walk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_walk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_walk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_walk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_walk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_walk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_walk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_walk9")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_deleplanque"]
+radius = 25.0
+height = 100.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_area_deleplanque"]
+radius = 30.0
+height = 110.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_melee"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ledge"]
+size = Vector2(20, 20)
+
+[node name="Deleplanque" type="CharacterBody2D" unique_id=1386877663]
+script = ExtResource("1_deleplanque_script")
+sac_projectile = ExtResource("56")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1309648914]
+position = Vector2(13, -1)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_deleplanque")
+animation = &"melee"
+offset = Vector2(0, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2108813433]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_deleplanque")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2011372303]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1314119703]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_area_deleplanque")
+
+[node name="MeleeArea" type="Area2D" parent="." unique_id=1966360616]
+position = Vector2(40, -20)
+monitoring = false
+monitorable = false
+script = ExtResource("46")
+attack_type = "melee"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea" unique_id=2074430819]
+shape = SubResource("CircleShape2D_melee")
+
+[node name="LedgeDetector" type="Area2D" parent="." unique_id=1386877664]
+position = Vector2(20, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LedgeDetector" unique_id=1386877665]
+shape = SubResource("RectangleShape2D_ledge")

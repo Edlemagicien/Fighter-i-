@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" uid="uid://5r4d0n3bystl" path="res://scripts/fardoux_projectile.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bsdgysbx3idfq" path="res://assets/sprites/Personnages/Fardoux/fardoux_attack_effect2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b3qxbe35aso7r" path="res://assets/sprites/Personnages/Fardoux/fardoux_attack_effect3.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dj2k05vna0nif" path="res://assets/sprites/Personnages/Fardoux/fardoux_attack_effect4.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b3pcdhjlaxujo" path="res://assets/sprites/Personnages/Fardoux/fardoux_attack_effect5.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://45pidq6etyiu" path="res://assets/sprites/Personnages/Fardoux/fardoux_attack_effect6.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b0fvhajawqtft" path="res://assets/sprites/Personnages/Fardoux/fardoux_attack_effect7.png" id="7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6q7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p8x6y"]
+radius = 10.0
+
+[node name="FardouxProjectile" type="Area2D"]
+script = ExtResource("1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v6q7n")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p8x6y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

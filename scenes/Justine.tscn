@@ -1,0 +1,366 @@
+[gd_scene format=3 uid="uid://c7uemohtga81j"]
+
+[ext_resource type="Script" uid="uid://ci0vffnr0g0dt" path="res://scripts/Justine.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cgitdcp8qytwk" path="res://assets/sprites/Personnages/Justine/Justine_idle1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://okcdvj46x46v" path="res://assets/sprites/Personnages/Justine/Justine_idle2.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://bbhr2847edcyu" path="res://assets/audio/voicelines/Philippe/trivial_philippe.wav" id="3_5t41v"]
+[ext_resource type="Texture2D" uid="uid://dsbuyysiusm15" path="res://assets/sprites/Personnages/Justine/Justine_idle3.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://cojgw2oddedem" path="res://assets/audio/voicelines/Philippe/resistance__philippe.wav" id="4_j11l1"]
+[ext_resource type="Texture2D" uid="uid://d232s76ypgmxj" path="res://assets/sprites/Personnages/Justine/Justine_idle4.png" id="5"]
+[ext_resource type="AudioStream" uid="uid://dx686hsi7fuf4" path="res://assets/audio/voicelines/Philippe/cqfd_philippe.wav" id="5_7c7ry"]
+[ext_resource type="Texture2D" uid="uid://b45hm18vu3cls" path="res://assets/sprites/Personnages/Justine/Justine_idle5.png" id="6"]
+[ext_resource type="AudioStream" uid="uid://dmnn6dpy7rehb" path="res://assets/audio/voicelines/Philippe/réviser_philippe.wav" id="6_6w57i"]
+[ext_resource type="Texture2D" uid="uid://c5dhx82xe2qfy" path="res://assets/sprites/Personnages/Justine/Justine_idle6.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://lv50cju6oduv" path="res://assets/sprites/Personnages/Justine/Justine_idle7.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bipgs8hen48kj" path="res://assets/sprites/Personnages/Justine/Justine_walking1.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dc1ct21nam2s5" path="res://assets/sprites/Personnages/Justine/Justine_walking2.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dn12i8wr56e5f" path="res://assets/sprites/Personnages/Justine/Justine_walking3.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dcnb51p55rggb" path="res://assets/sprites/Personnages/Justine/Justine_walking4.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://52xjumk6ba7x" path="res://assets/sprites/Personnages/Justine/Justine_walking5.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://dpf6iwctpajav" path="res://assets/sprites/Personnages/Justine/Justine_walking6.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://2eoomxb3wqvc" path="res://assets/sprites/Personnages/Justine/Justine_walking7.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://iai3ovfeiu8i" path="res://assets/sprites/Personnages/Justine/Justine_walking8.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://boiqvur7ifto6" path="res://assets/sprites/Personnages/Justine/Justine_walking9.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bobrv6crfnktl" path="res://assets/sprites/Personnages/Justine/Justine_juimping1.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://cas0i38pd0lkn" path="res://assets/sprites/Personnages/Justine/Justine_juimping2.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://cxm3k218ao1mq" path="res://assets/sprites/Personnages/Justine/Justine_juimping3.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://dys1iie6ndak8" path="res://assets/sprites/Personnages/Justine/Justine_juimping4.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://5hp4c02xein0" path="res://assets/sprites/Personnages/Justine/Justine_juimping5.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://dkxx02o1762uv" path="res://assets/sprites/Personnages/Justine/Justine_juimping6.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://drv3kf2fthwh2" path="res://assets/sprites/Personnages/Justine/Justine_juimping7.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://b5gkmg5g36ht1" path="res://assets/sprites/Personnages/Justine/Justine_juimping8.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://dht8yw5lh152b" path="res://assets/sprites/Personnages/Justine/Justine_juimping9.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://d0ua4rdm1mify" path="res://assets/sprites/Personnages/Justine/Justine_taking_damage1.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://cpxu52l0kar3t" path="res://assets/sprites/Personnages/Justine/Justine_taking_damage2.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://csyvg4ueb0ply" path="res://assets/sprites/Personnages/Justine/Justine_taking_damage3.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://3y48neek5bt0" path="res://assets/sprites/Personnages/Justine/Justine_taking_damage4.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://buims7p3h6una" path="res://assets/sprites/Personnages/Justine/Justine_taking_damage5.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://dm30smar2ah1a" path="res://assets/sprites/Personnages/Justine/Justine_taking_damage6.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://bt108ttdykel3" path="res://assets/sprites/Personnages/Justine/Justine_taking_damage7.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://cv8rcbmbja35d" path="res://assets/sprites/Personnages/Justine/Justine_taking_damage8.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://ba6w0v81462df" path="res://assets/sprites/Personnages/Justine/Justine_taking_damage9.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://bbja0ifvcf3ao" path="res://assets/sprites/Personnages/Justine/Justine_dash1.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://bh4om31wnusa4" path="res://assets/sprites/Personnages/Justine/Justine_dash2.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://bpo2iyrute2yu" path="res://assets/sprites/Personnages/Justine/Justine_dash3.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://dfd0llepegei" path="res://assets/sprites/Personnages/Justine/Justine_dash4.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://dmqpfavvw1e7i" path="res://assets/sprites/Personnages/Justine/Justine_dash5.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://dgyoe7ccnogwc" path="res://assets/sprites/Personnages/Justine/Justine_dash6.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://diqe3c7b13lv6" path="res://assets/sprites/Personnages/Justine/Justine_dash7.png" id="42"]
+[ext_resource type="PackedScene" path="res://scenes/justine_projectile.tscn" id="43"]
+[ext_resource type="Texture2D" uid="uid://dc58iohcicbkt" path="res://assets/sprites/Personnages/Justine/Justine_attack1.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://c3wbksblyualn" path="res://assets/sprites/Personnages/Justine/Justine_attack2.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://62kd8djul5py" path="res://assets/sprites/Personnages/Justine/Justine_attack3.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://dp6lj32cv5dr" path="res://assets/sprites/Personnages/Justine/Justine_attack4.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://md8gw4s0fm27" path="res://assets/sprites/Personnages/Justine/Justine_attack5.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://3nf10hwyu5a0" path="res://assets/sprites/Personnages/Justine/Justine_attack6.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://b7cvo1ynh2wsq" path="res://assets/sprites/Personnages/Justine/Justine_attack7.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://gyvtqj821jpj" path="res://assets/sprites/Personnages/Justine/Justine_attack8.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://b8r3xyb7i8fdd" path="res://assets/sprites/Personnages/Justine/Justine_attack9.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://drm40yv0i6bms" path="res://assets/sprites/Personnages/Justine/Justine_attack10.png" id="53"]
+[ext_resource type="Script" uid="uid://d1g2ky5ris2sd" path="res://scripts/hitbox.gd" id="54"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="2"]
+radius = 25.0
+height = 100.0
+
+[sub_resource type="CapsuleShape2D" id="3"]
+radius = 30.0
+height = 110.0
+
+[sub_resource type="CircleShape2D" id="4"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ledge"]
+
+[node name="Justine" type="CharacterBody2D" unique_id=369523849]
+script = ExtResource("1")
+chat_projectile = ExtResource("43")
+voice_select = ExtResource("3_5t41v")
+voice_hurt = ExtResource("4_j11l1")
+voice_special = ExtResource("5_7c7ry")
+voice_die = ExtResource("6_6w57i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=79103466]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("1")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1301772318]
+position = Vector2(0, -15)
+shape = SubResource("2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=671007564]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1506633781]
+position = Vector2(0, -15)
+shape = SubResource("3")
+
+[node name="MeleeArea" type="Area2D" parent="." unique_id=1073653403]
+position = Vector2(40, -20)
+monitoring = false
+monitorable = false
+script = ExtResource("54")
+attack_type = "melee"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea" unique_id=1671439333]
+shape = SubResource("4")
+
+[node name="LedgeDetector" type="Area2D" parent="." unique_id=2008996846]
+position = Vector2(20, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LedgeDetector" unique_id=568315491]
+shape = SubResource("RectangleShape2D_ledge")

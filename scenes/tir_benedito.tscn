@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cgxc3f0d46iga"]
+
+[ext_resource type="Script" uid="uid://bj2s7j0qpttln" path="res://scripts/tir_benedito.gd" id="1_dlo6m"]
+[ext_resource type="Texture2D" uid="uid://vwvl5nvpsmep" path="res://assets/sprites/Personnages/Benedito/Benedito_munition.webp" id="2_dlo6m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dlo6m"]
+radius = 5.0990195
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rg4n3"]
+radius = 8.0
+
+[node name="Area2D" type="Area2D" unique_id=1681265249]
+script = ExtResource("1_dlo6m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1841844528]
+position = Vector2(0, -27.999998)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_dlo6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=367255998]
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_dlo6m")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2050813209]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1502641008]
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_rg4n3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

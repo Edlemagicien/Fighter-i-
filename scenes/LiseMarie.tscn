@@ -1,0 +1,338 @@
+[gd_scene format=3 uid="uid://1g8tc3joqt66"]
+
+[ext_resource type="Script" uid="uid://vxbe4g6c1o2w" path="res://scripts/LiseMarie.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/lise_marie_projectile.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://bx1wd8s6unhgp" path="res://assets/sprites/Personnages/Lise-Marie/lmv_idle1.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://47fwr52reeor" path="res://assets/audio/voicelines/Veillon/c++_choisi_veillon.wav" id="3_ine2a"]
+[ext_resource type="Texture2D" uid="uid://dwcb7mvqq6c7n" path="res://assets/sprites/Personnages/Lise-Marie/lmv_idle2.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://bs4atl130vkf5" path="res://assets/audio/voicelines/Veillon/délai_veillon.wav" id="4_g5i7h"]
+[ext_resource type="Texture2D" uid="uid://ctf0qtgovnxjv" path="res://assets/sprites/Personnages/Lise-Marie/lmv_idle3.png" id="5"]
+[ext_resource type="AudioStream" uid="uid://ca0ohnqxetmq2" path="res://assets/audio/voicelines/Veillon/tempête_neige_veillon.wav" id="5_y1o52"]
+[ext_resource type="Texture2D" uid="uid://bvr5hb8trdr4s" path="res://assets/sprites/Personnages/Lise-Marie/lmv_idle4.png" id="6"]
+[ext_resource type="AudioStream" uid="uid://dr4aqbeebd2ff" path="res://assets/audio/voicelines/Veillon/jeu_de_la_vie_veillon.wav" id="6_b6054"]
+[ext_resource type="Texture2D" uid="uid://c34mp764ogbpi" path="res://assets/sprites/Personnages/Lise-Marie/lmv_idle5.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://qdpfi66ibnj" path="res://assets/sprites/Personnages/Lise-Marie/lmv_walk1.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bb58obbdttjpw" path="res://assets/sprites/Personnages/Lise-Marie/lmv_walk2.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://0q1ix54giapr" path="res://assets/sprites/Personnages/Lise-Marie/lmv_walk3.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://b0lppc7c076nr" path="res://assets/sprites/Personnages/Lise-Marie/lmv_walk4.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://c504cd2nfubul" path="res://assets/sprites/Personnages/Lise-Marie/lmv_walk5.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://qskvwg4ab3t6" path="res://assets/sprites/Personnages/Lise-Marie/lmv_walk6.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://5jyhlxofulhc" path="res://assets/sprites/Personnages/Lise-Marie/lmv_walk7.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://bum0ivmafsywo" path="res://assets/sprites/Personnages/Lise-Marie/lmv_walk8.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://bwff6dyyylxot" path="res://assets/sprites/Personnages/Lise-Marie/lmv_walk9.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://bqhcl4abphpf8" path="res://assets/sprites/Personnages/Lise-Marie/lmv_dash1.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://dsssplw0y42dy" path="res://assets/sprites/Personnages/Lise-Marie/lmv_dash2.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://bjc6rtcx23m22" path="res://assets/sprites/Personnages/Lise-Marie/lmv_dash3.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://c5qhqw5w4dmr8" path="res://assets/sprites/Personnages/Lise-Marie/lmv_dash4.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://dlaqwslgd22jp" path="res://assets/sprites/Personnages/Lise-Marie/lmv_dash5.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://dmmylq8ing82x" path="res://assets/sprites/Personnages/Lise-Marie/lmv_dash6.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://c6rb8otcbcd6r" path="res://assets/sprites/Personnages/Lise-Marie/lmv_dash7.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://bbs06cf7r0q1h" path="res://assets/sprites/Personnages/Lise-Marie/lmv_dash8.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://dmp0ls7pvj7h" path="res://assets/sprites/Personnages/Lise-Marie/lmv_jump1.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://5jh2d21x0t6q" path="res://assets/sprites/Personnages/Lise-Marie/lmv_jump2.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://bfvoht74vf0qf" path="res://assets/sprites/Personnages/Lise-Marie/lmv_jump3.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://xsh3ipk6s0b8" path="res://assets/sprites/Personnages/Lise-Marie/lmv_jump4.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://k520kstdlssw" path="res://assets/sprites/Personnages/Lise-Marie/lmv_jump5.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://bwcvh258528ok" path="res://assets/sprites/Personnages/Lise-Marie/lmv_jump6.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://dmqurwj14l3r" path="res://assets/sprites/Personnages/Lise-Marie/lmv_jump7.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://2idw1l6xoipq" path="res://assets/sprites/Personnages/Lise-Marie/lmv_jump8.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://bpc0vlxk2bg2r" path="res://assets/sprites/Personnages/Lise-Marie/lmv_jump9.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://d372x7funve8" path="res://assets/sprites/Personnages/Lise-Marie/lmv_attack1.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://bdh2qcb3l3f6k" path="res://assets/sprites/Personnages/Lise-Marie/lmv_attack2.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://d4g46aoa65xef" path="res://assets/sprites/Personnages/Lise-Marie/lmv_attack3.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://de8l3i4lari3m" path="res://assets/sprites/Personnages/Lise-Marie/lmv_attack4.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://2q51s48kneba" path="res://assets/sprites/Personnages/Lise-Marie/lmv_attack5.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://bkgsahcel1try" path="res://assets/sprites/Personnages/Lise-Marie/lmv_attack6.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://cpnwfg18om2hj" path="res://assets/sprites/Personnages/Lise-Marie/lmv_attack7.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://cpq2c56pi828h" path="res://assets/sprites/Personnages/Lise-Marie/lmv_attack8.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://0e6s0u0nddt4" path="res://assets/sprites/Personnages/Lise-Marie/lmv_attack9.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://crvy8cnmsvsur" path="res://assets/sprites/Personnages/Lise-Marie/lmv_taking_damage1.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://rew3o8674fa1" path="res://assets/sprites/Personnages/Lise-Marie/lmv_taking_damage2.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://bincb0qc63wff" path="res://assets/sprites/Personnages/Lise-Marie/lmv_taking_damage3.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://d2xm5be4tq310" path="res://assets/sprites/Personnages/Lise-Marie/lmv_taking_damage4.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://crpvculi2xp45" path="res://assets/sprites/Personnages/Lise-Marie/lmv_taking_damage5.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://hwfivwy2sugy" path="res://assets/sprites/Personnages/Lise-Marie/lmv_taking_damage6.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://de0lsss57k15c" path="res://assets/sprites/Personnages/Lise-Marie/lmv_taking_damage7.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://25bnpg7niiqh" path="res://assets/sprites/Personnages/Lise-Marie/lmv_taking_damage8.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://6iyg1r6pxbp" path="res://assets/sprites/Personnages/Lise-Marie/lmv_taking_damage9.png" id="51"]
+[ext_resource type="Script" uid="uid://d1g2ky5ris2sd" path="res://scripts/hitbox.gd" id="52"]
+[ext_resource type="Texture2D" uid="uid://c2tnfojso5eit" path="res://assets/sprites/Personnages/Lise-Marie/lmv_grab1-climb.png" id="53"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("53")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}],
+"loop": false,
+"name": &"melee",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}],
+"loop": true,
+"name": &"run",
+"speed": 18.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="2"]
+radius = 20.0
+height = 100.0
+
+[sub_resource type="CapsuleShape2D" id="3"]
+radius = 25.0
+height = 100.0
+
+[sub_resource type="CircleShape2D" id="4"]
+radius = 30.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ledge"]
+
+[node name="LiseMarie" type="CharacterBody2D" unique_id=113358347]
+script = ExtResource("1")
+cap_projectile = ExtResource("2")
+voice_select = ExtResource("3_ine2a")
+voice_hurt = ExtResource("4_g5i7h")
+voice_special = ExtResource("5_y1o52")
+voice_die = ExtResource("6_b6054")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2076307240]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("1")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1538074007]
+position = Vector2(3, -16)
+shape = SubResource("2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1015860149]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=824263540]
+position = Vector2(5, -15)
+shape = SubResource("3")
+
+[node name="MeleeArea" type="Area2D" parent="." unique_id=1082620345]
+position = Vector2(40, -20)
+monitoring = false
+monitorable = false
+script = ExtResource("52")
+attack_type = "melee"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea" unique_id=2108952388]
+shape = SubResource("4")
+
+[node name="LedgeDetector" type="Area2D" parent="." unique_id=113358348]
+position = Vector2(20, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LedgeDetector" unique_id=113358349]
+shape = SubResource("RectangleShape2D_ledge")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://blb783efrbt85"]
+
+[ext_resource type="Script" uid="uid://l38x4xmslbce" path="res://scripts/mele_projectile.gd" id="1_l8fxm"]
+[ext_resource type="Texture2D" uid="uid://dxoyx1r67udev" path="res://assets/sprites/Personnages/Mele/chat_MELE.png" id="1_quahl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8fxm"]
+radius = 12.0
+
+[node name="MeleProjectile" type="Area2D" unique_id=923891117]
+script = ExtResource("1_l8fxm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=231316911]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_quahl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1429813173]
+shape = SubResource("CircleShape2D_l8fxm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

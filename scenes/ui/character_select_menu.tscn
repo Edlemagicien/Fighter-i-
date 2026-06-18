@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://df5gfpqrctdr7" path="res://assets/art/ui/menu_background.png" id="2_bg"]
 [ext_resource type="FontFile" uid="uid://d4beyjxkjfg6p" path="res://assets/fonts/perfect_dos_vga_437.ttf" id="3_font"]
 
-[node name="CharacterSelectMenu" type="Control" unique_id=1574887775 node_paths=PackedStringArray("character_grid", "next_button", "back_button", "p1_status_label", "p2_status_label")]
+[node name="CharacterSelectMenu" type="Control" unique_id=1574887775 node_paths=PackedStringArray("character_grid", "ready_button_p1", "ready_button_p2", "back_button", "p1_status_label", "p2_status_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cscript")
 character_grid = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/CharacterList")
-next_button = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Buttons/NextButton")
+ready_button_p1 = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Buttons/ReadyButtonP1")
+ready_button_p2 = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Buttons/ReadyButtonP2")
 back_button = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Buttons/BackButton")
 p1_status_label = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/PlayerStatus/P1Status")
 p2_status_label = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/PlayerStatus/P2Status")
@@ -98,6 +99,18 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ReadyButtonP1" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Buttons" unique_id=1654321090]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 32
+text = "PRET J1"
+
+[node name="Spacer1" type="Control" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Buttons" unique_id=1654321092]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="BackButton" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Buttons" unique_id=1910711128]
 custom_minimum_size = Vector2(150, 0)
@@ -106,12 +119,16 @@ theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 32
 text = "RETOUR"
 
-[node name="NextButton" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Buttons" unique_id=796007513]
+[node name="Spacer2" type="Control" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Buttons" unique_id=1654321093]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ReadyButtonP2" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Buttons" unique_id=1654321091]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 32
-text = "SUIVANT"
+text = "PRET J2"
 
 [node name="VoicePlayer" type="AudioStreamPlayer" parent="." unique_id=1168361661]
 bus = &"SFX"

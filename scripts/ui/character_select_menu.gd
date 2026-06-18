@@ -6,8 +6,18 @@ signal back_requested(source_id: StringName, source_node: Node)
 
 const CHARACTER_SLOT_SCENE: PackedScene = preload("res://scenes/ui/character_slot.tscn")
 
+# Couleurs pour les visuels
+const COLOR_P1_CURSOR := Color.BLUE
+const COLOR_P1_SELECTED := Color.DARK_BLUE
+const COLOR_P2_CURSOR := Color.ORANGE
+const COLOR_P2_SELECTED := Color.DARK_ORANGE
+const COLOR_BOTH_SELECTED := Color.MAGENTA
+const COLOR_READY_BUTTON_HOVER := Color.YELLOW
+const COLOR_READY_STATE := Color.GREEN
+
 @export var character_grid: GridContainer
-@export var next_button: Button
+@export var ready_button_p1: Button
+@export var ready_button_p2: Button
 @export var back_button: Button
 @export var p1_status_label: Label
 @export var p2_status_label: Label
@@ -16,13 +26,20 @@ const CHARACTER_SLOT_SCENE: PackedScene = preload("res://scenes/ui/character_slo
 @onready var voice_player : AudioStreamPlayer = $VoicePlayer
 
 var _is_transitioning: bool = false
-var _current_selecting_player: int = 1
 
+# État de sélection de chaque joueur
+var _p1_cursor_index: int = 0
+var _p2_cursor_index: int = 0
 var _p1_selected_slot: Node = null
 var _p2_selected_slot: Node = null
+var _p1_is_ready: bool = false
+var _p2_is_ready: bool = false
 
-# Navigation joystick
-var _focused_slot_index: int = 0
+# Navigation : si vrai, le joueur est sur son bouton Prêt
+var _p1_on_ready_button: bool = false
+var _p2_on_ready_button: bool = false
+
+# Tous les slots de la grille
 var _all_slots: Array[Node] = []
 var _grid_columns: int = 7
 
@@ -97,33 +114,41 @@ var characters: Array[Dictionary] = [
 func _ready() -> void:
 	_build_character_grid()
 	
-	if next_button:
-		next_button.pressed.connect(_on_next_pressed)
-		next_button.disabled = true # Disabled until both characters are selected
+	# Configurer les boutons Prêt
+	if ready_button_p1:
+		ready_button_p1.pressed.connect(_on_ready_button_p1_pressed)
+	if ready_button_p2:
+		ready_button_p2.pressed.connect(_on_ready_button_p2_pressed)
 	if back_button:
 		back_button.pressed.connect(_on_back_pressed)
 		
 	_update_ui()
-
-	# Focus le premier slot valide pour la navigation joystick
-	_focused_slot_index = 0
-	_update_focused_slot()
+	_update_visuals()
 
 func _update_ui() -> void:
+	# Mise à jour des labels de statut
 	if p1_status_label:
+		var status = "J1 : "
 		if _p1_selected_slot:
-			p1_status_label.text = "J1 : " + _p1_selected_slot.name_label.text
+			status += _p1_selected_slot.name_label.text
 		else:
-			p1_status_label.text = "J1 : En attente..."
+			status += "Aucun"
+		if _p1_is_ready:
+			status += " [PRET]"
+		p1_status_label.text = status
 		
 	if p2_status_label:
+		var status = "J2 : "
 		if _p2_selected_slot:
-			p2_status_label.text = "J2 : " + _p2_selected_slot.name_label.text
+			status += _p2_selected_slot.name_label.text
 		else:
-			p2_status_label.text = "J2 : En attente..."
-		
-	if next_button:
-		next_button.disabled = _p1_selected_slot == null or _p2_selected_slot == null
+			status += "Aucun"
+		if _p2_is_ready:
+			status += " [PRET]"
+		p2_status_label.text = status
+	
+	# Mise à jour de l'apparence des boutons Prêt
+	_update_ready_buttons_visual()
 
 func _build_character_grid() -> void:
 	if character_grid == null:
@@ -146,9 +171,6 @@ func _build_character_grid() -> void:
 				char_data["preview"]
 			)
 
-		if slot.has_signal("character_pressed"):
-			slot.connect("character_pressed", _on_character_pressed)
-
 		_all_slots.append(slot)
 
 	var empty_count: int = max(total_slots - characters.size(), 0)
@@ -157,63 +179,133 @@ func _build_character_grid() -> void:
 		character_grid.add_child(empty_slot)
 		if empty_slot.has_method("setup"):
 			empty_slot.setup()
+		_all_slots.append(empty_slot)
 
-func _update_focused_slot() -> void:
-	# Retire le highlight de focus de tous les slots
+func _update_visuals() -> void:
+	"""Met à jour l'apparence visuelle de tous les slots et boutons."""
+	_update_grid_visuals()
+	_update_ready_buttons_visual()
+
+func _update_grid_visuals() -> void:
+	"""Met à jour les couleurs et l'état des slots de la grille."""
 	for i in range(_all_slots.size()):
 		var slot = _all_slots[i]
+		var slot_modulate = Color.WHITE
+		var slot_self_modulate = Color.WHITE
+		
+		# Déterminer la couleur du slot
 		if slot == _p1_selected_slot and slot == _p2_selected_slot:
-			slot.set_selected(3)
+			# Les deux joueurs ont sélectionné ce slot
+			slot_modulate = COLOR_BOTH_SELECTED
 		elif slot == _p1_selected_slot:
-			slot.set_selected(1)
+			# J1 a sélectionné ce slot
+			slot_modulate = COLOR_P1_SELECTED
 		elif slot == _p2_selected_slot:
-			slot.set_selected(2)
-		elif i == _focused_slot_index:
-			# Outline/teinte de focus : légèrement jaune
-			slot.modulate = Color(1.0, 1.0, 0.5, 1.0)
+			# J2 a sélectionné ce slot
+			slot_modulate = COLOR_P2_SELECTED
+		
+		# Ajouter le curseur si le joueur survole ce slot (en mode grille)
+		if not _p1_on_ready_button and i == _p1_cursor_index:
+			slot_self_modulate = COLOR_P1_CURSOR
+		elif not _p2_on_ready_button and i == _p2_cursor_index:
+			slot_self_modulate = COLOR_P2_CURSOR
+		
+		if slot.has_method("set_modulate"):
+			slot.modulate = slot_modulate
 		else:
-			slot.set_selected(0)
+			slot.modulate = slot_modulate
+			
+		slot.self_modulate = slot_self_modulate
 
-func _update_slots_visuals() -> void:
-	_update_focused_slot()
+func _update_ready_buttons_visual() -> void:
+	"""Met à jour l'apparence des boutons Prêt."""
+	if ready_button_p1:
+		ready_button_p1.modulate = Color.WHITE
+		ready_button_p1.self_modulate = Color.WHITE
+		
+		if _p1_is_ready:
+			ready_button_p1.modulate = COLOR_READY_STATE
+		
+		if _p1_on_ready_button:
+			ready_button_p1.self_modulate = COLOR_P1_CURSOR
+			if _p1_is_ready:
+				ready_button_p1.self_modulate = COLOR_READY_BUTTON_HOVER
+	
+	if ready_button_p2:
+		ready_button_p2.modulate = Color.WHITE
+		ready_button_p2.self_modulate = Color.WHITE
+		
+		if _p2_is_ready:
+			ready_button_p2.modulate = COLOR_READY_STATE
+		
+		if _p2_on_ready_button:
+			ready_button_p2.self_modulate = COLOR_P2_CURSOR
+			if _p2_is_ready:
+				ready_button_p2.self_modulate = COLOR_READY_BUTTON_HOVER
 
-func _on_character_pressed(slot: Node, _character_scene: PackedScene) -> void:
+func _select_character_for_player(player: int, slot: Node) -> void:
+	"""Sélectionne un personnage pour un joueur spécifique."""
+	if slot == null or not _all_slots.has(slot):
+		return
+	
+	# Si le joueur est déjà prêt, il ne peut pas changer de personnage
+	if player == 1 and _p1_is_ready:
+		return
+	if player == 2 and _p2_is_ready:
+		return
+	
 	# Jouer la voiceline de sélection
-	if _character_scene:
-		var temp_char = _character_scene.instantiate()
+	if slot._character_scene:
+		var temp_char = slot._character_scene.instantiate()
 		if "voice_select" in temp_char and temp_char.voice_select:
 			if voice_player:
 				voice_player.stream = temp_char.voice_select
 				voice_player.play()
 		temp_char.queue_free()
-
-	if _current_selecting_player == 1:
+	
+	if player == 1:
 		_p1_selected_slot = slot
-		_current_selecting_player = 2
-	elif _current_selecting_player == 2:
+	else:
 		_p2_selected_slot = slot
-		_current_selecting_player = 1
-		
-	_update_slots_visuals()
+	
+	_update_visuals()
 	_update_ui()
 
-func _on_next_pressed() -> void:
-	if _is_transitioning or _p1_selected_slot == null or _p2_selected_slot == null:
-		return
-	_is_transitioning = true
-	
-	var p1_path = _p1_selected_slot._character_scene.resource_path
-	var p2_path = _p2_selected_slot._character_scene.resource_path
-	
-	var p1_idx = GameData.CHARACTER_SCENES.find(p1_path)
-	if p1_idx != -1:
-		GameData.p1_character_index = p1_idx
+func _on_ready_button_p1_pressed() -> void:
+	"""Gère le bouton Prêt du joueur 1."""
+	if _p1_on_ready_button:
+		_p1_is_ready = !_p1_is_ready
+		_update_visuals()
+		_update_ui()
+		_check_auto_transition()
+
+func _on_ready_button_p2_pressed() -> void:
+	"""Gère le bouton Prêt du joueur 2."""
+	if _p2_on_ready_button:
+		_p2_is_ready = !_p2_is_ready
+		_update_visuals()
+		_update_ui()
+		_check_auto_transition()
+
+func _check_auto_transition() -> void:
+	"""Vérifie si les deux joueurs sont prêts et déclenche la transition."""
+	if _p1_is_ready and _p2_is_ready and not _is_transitioning:
+		_is_transitioning = true
 		
-	var p2_idx = GameData.CHARACTER_SCENES.find(p2_path)
-	if p2_idx != -1:
-		GameData.p2_character_index = p2_idx
-	
-	characters_selected.emit(&"character_select_menu", self)
+		var p1_path = _p1_selected_slot._character_scene.resource_path if _p1_selected_slot and _p1_selected_slot._character_scene else ""
+		var p2_path = _p2_selected_slot._character_scene.resource_path if _p2_selected_slot and _p2_selected_slot._character_scene else ""
+		
+		if p1_path:
+			var p1_idx = GameData.CHARACTER_SCENES.find(p1_path)
+			if p1_idx != -1:
+				GameData.p1_character_index = p1_idx
+		
+		if p2_path:
+			var p2_idx = GameData.CHARACTER_SCENES.find(p2_path)
+			if p2_idx != -1:
+				GameData.p2_character_index = p2_idx
+		
+		characters_selected.emit(&"character_select_menu", self)
 
 func _on_back_pressed() -> void:
 	if _is_transitioning:
@@ -224,36 +316,120 @@ func _on_back_pressed() -> void:
 # ─── Navigation joystick / clavier ───────────────────────────────────────────
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	# Gestion des entrées du joueur 1
+	_handle_player_input(1, event)
+	# Gestion des entrées du joueur 2
+	_handle_player_input(2, event)
+
+func _handle_player_input(player: int, event: InputEvent) -> void:
+	"""Gère les entrées d'un joueur spécifique."""
+	var prefix = "p%d_" % player
+	var moved := false
+	var action_performed := false
+	
+	if not _is_transitioning:
+		# Navigation dans la grille ou sur les boutons
+		if event.is_action_pressed(prefix + "left"):
+			_move_player_cursor(player, -1, 0)
+			action_performed = true
+		elif event.is_action_pressed(prefix + "right"):
+			_move_player_cursor(player, 1, 0)
+			action_performed = true
+		elif event.is_action_pressed(prefix + "up"):
+			_move_player_cursor(player, 0, -1)
+			action_performed = true
+		elif event.is_action_pressed(prefix + "down"):
+			_move_player_cursor(player, 0, 1)
+			action_performed = true
+		
+		# Sélection / Validation
+		if event.is_action_pressed(prefix + "select"):
+			_handle_player_select(player)
+			action_performed = true
+	
+	# Gestion du bouton Retour (uniquement J1)
+	if player == 1 and event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()
 		_on_back_pressed()
 		return
-
-	# Mouvement dans la grille
-	var moved := false
-	if event.is_action_pressed("ui_right"):
-		_focused_slot_index = min(_focused_slot_index + 1, _all_slots.size() - 1)
-		moved = true
-	elif event.is_action_pressed("ui_left"):
-		_focused_slot_index = max(_focused_slot_index - 1, 0)
-		moved = true
-	elif event.is_action_pressed("ui_down"):
-		_focused_slot_index = min(_focused_slot_index + _grid_columns, _all_slots.size() - 1)
-		moved = true
-	elif event.is_action_pressed("ui_up"):
-		_focused_slot_index = max(_focused_slot_index - _grid_columns, 0)
-		moved = true
-
-	if moved:
+	
+	if action_performed:
 		get_viewport().set_input_as_handled()
-		_update_focused_slot()
-		return
 
-	# Bouton de confirmation (ui_accept = Enter / bouton A / Croix)
-	if event.is_action_pressed("ui_accept"):
-		get_viewport().set_input_as_handled()
-		if _focused_slot_index < _all_slots.size():
-			var slot = _all_slots[_focused_slot_index]
-			if not slot.disabled:
-				_on_character_pressed(slot, slot._character_scene)
+func _move_player_cursor(player: int, dx: int, dy: int) -> void:
+	"""Déplace le curseur d'un joueur."""
+	var cursor_index = _p1_cursor_index if player == 1 else _p2_cursor_index
+	var on_ready_button = _p1_on_ready_button if player == 1 else _p2_on_ready_button
+	
+	# Si on est sur le bouton Prêt
+	if on_ready_button:
+		# Mouvement vers le haut : retourner à la grille
+		if dy < 0:
+			var on_ready = _p1_is_ready if player == 1 else _p2_is_ready
+			if player == 1:
+				_p1_on_ready_button = false
+				_p1_cursor_index = min(_grid_columns * 2, _all_slots.size() - 1)
+			else:
+				_p2_on_ready_button = false
+				_p2_cursor_index = min(_grid_columns * 2, _all_slots.size() - 1)
+			_update_visuals()
+			return
+		# Les autres mouvements sont ignorés en étant sur le bouton
 		return
+	
+	# On est dans la grille
+	var new_index = cursor_index
+	
+	if dx != 0:
+		# Mouvement gauche/droite
+		new_index = cursor_index + dx
+	elif dy != 0:
+		# Mouvement haut/bas
+		if dy < 0:
+			# Vers le haut
+			new_index = max(cursor_index - _grid_columns, 0)
+		else:
+			# Vers le bas
+			# Vérifie si on sort de la grille (passage au bouton Prêt)
+			if cursor_index + _grid_columns >= _all_slots.size():
+				# Passer au bouton Prêt
+				if player == 1:
+					_p1_on_ready_button = true
+				else:
+					_p2_on_ready_button = true
+				_update_visuals()
+				return
+			else:
+				new_index = cursor_index + _grid_columns
+	
+	# Clamper l'index dans les limites de la grille
+	new_index = clamp(new_index, 0, _all_slots.size() - 1)
+	
+	# Limiter les mouvements horizontaux pour rester dans les lignes
+	var current_row = cursor_index / _grid_columns
+	var new_row = new_index / _grid_columns
+	
+	if dx != 0 and current_row != new_row:
+		new_index = cursor_index  # Revenir à la position actuelle
+	
+	if player == 1:
+		_p1_cursor_index = new_index
+	else:
+		_p2_cursor_index = new_index
+	
+	_update_visuals()
+
+func _handle_player_select(player: int) -> void:
+	"""Gère l'appui sur le bouton de sélection d'un joueur."""
+	if player == 1:
+		if _p1_on_ready_button:
+			_on_ready_button_p1_pressed()
+		else:
+			var slot = _all_slots[_p1_cursor_index]
+			_select_character_for_player(1, slot)
+	else:
+		if _p2_on_ready_button:
+			_on_ready_button_p2_pressed()
+		else:
+			var slot = _all_slots[_p2_cursor_index]
+			_select_character_for_player(2, slot)

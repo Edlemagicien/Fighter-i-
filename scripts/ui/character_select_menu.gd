@@ -62,7 +62,7 @@ var characters: Array[Dictionary] = [
 	{
 		"display_name": "Fardoux",
 		"scene": preload("res://scenes/Fardoux.tscn"),
-		"preview": preload("res://assets/sprites/Personnages/Fardoux/fardoux fixe 1.png")
+		"preview": preload("res://assets/sprites/Personnages/Fardoux/fardoux_jump11.png")
 	},
 	{
 		"display_name": "Morelle",

@@ -6,9 +6,9 @@
 
 [node name="Main" type="Node" unique_id=1652334905 node_paths=PackedStringArray("transition_rect")]
 script = ExtResource("1_fgbdc")
+transition_rect = NodePath("TransitionLayer/ColorRect")
 music_splash = ExtResource("3_intro")
 music_menu = ExtResource("2_i4cec")
-transition_rect = NodePath("TransitionLayer/ColorRect")
 
 [node name="Stage" type="Node" parent="." unique_id=623223610]
 

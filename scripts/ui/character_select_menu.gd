@@ -8,9 +8,9 @@ const CHARACTER_SLOT_SCENE: PackedScene = preload("res://scenes/ui/character_slo
 
 # Couleurs pour les visuels
 const COLOR_P1_CURSOR := Color.BLUE
-const COLOR_P1_SELECTED := Color.DARK_BLUE
-const COLOR_P2_CURSOR := Color.ORANGE
-const COLOR_P2_SELECTED := Color.DARK_ORANGE
+const COLOR_P1_SELECTED := Color.CORNFLOWER_BLUE
+const COLOR_P2_CURSOR := Color.RED
+const COLOR_P2_SELECTED := Color.CRIMSON
 const COLOR_BOTH_SELECTED := Color.MAGENTA
 const COLOR_READY_BUTTON_HOVER := Color.YELLOW
 const COLOR_READY_STATE := Color.GREEN

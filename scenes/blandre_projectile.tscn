@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cblnt4gywblpj"]
+
+[ext_resource type="Script" uid="uid://dxmoh1o6b8ju7" path="res://scenes/eclair_blandre.gd" id="1_gt8mq"]
+[ext_resource type="Texture2D" uid="uid://d25x4jsrk4qvs" path="res://assets/sprites/Personnages/Blandre/ezgif-1dfbfe4ec911fd11.png" id="2_gt8mq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xbc8"]
+size = Vector2(250, 218)
+
+[node name="BlandreProjectile" type="Area2D" unique_id=2092005721]
+script = ExtResource("1_gt8mq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1784903748]
+position = Vector2(-10.370361, 0)
+scale = Vector2(1.3703704, 1)
+texture = ExtResource("2_gt8mq")
+offset = Vector2(-80, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2110429707]
+position = Vector2(-137, 1)
+shape = SubResource("RectangleShape2D_7xbc8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djcqcuvuton3y" path="res://scripts/Blandre.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cy4timxg6rb3c" path="res://assets/sprites/Personnages/Blandre/blandre_attack1.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://cblnt4gywblpj" path="res://scenes/blandre_projectile.tscn" id="2_0u2tj"]
 [ext_resource type="AudioStream" uid="uid://dhppj6bc0ilio" path="res://assets/audio/voicelines/Blandre/Courant_tension_blandre.wav" id="2_hxwgh"]
 [ext_resource type="Texture2D" uid="uid://bq40eky0jpgcq" path="res://assets/sprites/Personnages/Blandre/blandre_attack2.png" id="3"]
 [ext_resource type="AudioStream" uid="uid://bdm7p0eduew10" path="res://assets/audio/voicelines/Blandre/court_circuit_blandre.wav" id="3_qn56t"]
@@ -47,6 +48,10 @@
 [ext_resource type="Texture2D" uid="uid://bqh4iq50o7rre" path="res://assets/sprites/Personnages/Blandre/blandre_walk3.png" id="41"]
 [ext_resource type="Texture2D" uid="uid://cu2f6djxj58oj" path="res://assets/sprites/Personnages/Blandre/blandre_walk4.png" id="42"]
 [ext_resource type="Script" uid="uid://d1g2ky5ris2sd" path="res://scripts/hitbox.gd" id="43"]
+[ext_resource type="Texture2D" uid="uid://ckq6vpdyuxy8w" path="res://assets/sprites/Personnages/Blandre/Blandre_melee1.png" id="43_gfca4"]
+[ext_resource type="Texture2D" uid="uid://drt5wj3gfuesu" path="res://assets/sprites/Personnages/Blandre/Blandre_melee2.png" id="44_0u2tj"]
+[ext_resource type="Texture2D" uid="uid://jjspi4xqp4ld" path="res://assets/sprites/Personnages/Blandre/Blandre_melee3.png" id="45_ekflb"]
+[ext_resource type="Texture2D" uid="uid://cd0tjnafm7wll" path="res://assets/sprites/Personnages/Blandre/Blandre_melee4.png" id="46_gsgm4"]
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{
@@ -204,25 +209,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2")
+"texture": ExtResource("43_gfca4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3")
+"texture": ExtResource("44_0u2tj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4")
+"texture": ExtResource("45_ekflb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8")
+"texture": ExtResource("46_gsgm4")
 }],
 "loop": false,
 "name": &"melee",
@@ -261,6 +257,7 @@ radius = 30.0
 
 [node name="Blandre" type="CharacterBody2D" unique_id=2041489519]
 script = ExtResource("1")
+projectile_blandre = ExtResource("2_0u2tj")
 voice_select = ExtResource("2_hxwgh")
 voice_hurt = ExtResource("3_qn56t")
 voice_special = ExtResource("4_dqoub")
@@ -269,8 +266,7 @@ voice_die = ExtResource("5_a8fr8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1857223151]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("1")
-animation = &"run"
-frame_progress = 0.13857296
+animation = &"attack"
 offset = Vector2(0, -33)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=618495778]

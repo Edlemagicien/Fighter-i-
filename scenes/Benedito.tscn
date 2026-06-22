@@ -44,30 +44,17 @@
 [ext_resource type="Texture2D" uid="uid://ev4hslqlt4sj" path="res://assets/sprites/Personnages/Benedito/Benedito_jump5.png" id="23_ev7nt"]
 [ext_resource type="Texture2D" uid="uid://dtbh1a8ihn2k7" path="res://assets/sprites/Personnages/Benedito/benedito_jump6.png" id="24_b06wc"]
 [ext_resource type="Script" uid="uid://d1g2ky5ris2sd" path="res://scripts/hitbox.gd" id="25"]
+[ext_resource type="Texture2D" uid="uid://bgn8anufn2dop" path="res://assets/sprites/Personnages/Benedito/benedito_attack1 (1) (1).png" id="35_ev7nt"]
+[ext_resource type="Texture2D" uid="uid://c8l8cv244sd1w" path="res://assets/sprites/Personnages/Benedito/benedito_attack2 (1) (1).png" id="36_b06wc"]
+[ext_resource type="Texture2D" uid="uid://bb8gb6cgmasa3" path="res://assets/sprites/Personnages/Benedito/benedito_attack3 (1) (1).png" id="37_1ibk6"]
+[ext_resource type="Texture2D" uid="uid://c3lfu6p4exsie" path="res://assets/sprites/Personnages/Benedito/benedito_attack4 (1) (1).png" id="38_run0c"]
+[ext_resource type="Texture2D" uid="uid://btigqu2v3cpa3" path="res://assets/sprites/Personnages/Benedito/benedito_attack5 (1) (1).png" id="39_l50ve"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_owota"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_6l5bh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_gprmt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_snfkf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_dbpvu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_i7vfh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_3b4ik")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_l44pc")
+"texture": ExtResource("23_ev7nt")
 }],
 "loop": true,
 "name": &"climb",
@@ -187,32 +174,21 @@ animations = [{
 "name": &"jump",
 "speed": 5.0
 }, {
-"frames": [],
-"loop": true,
-"name": &"ledge_gap",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_6l5bh")
+"texture": ExtResource("35_ev7nt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_gprmt")
+"texture": ExtResource("36_b06wc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_snfkf")
+"texture": ExtResource("37_1ibk6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_dbpvu")
+"texture": ExtResource("38_run0c")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_i7vfh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_3b4ik")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_l44pc")
+"texture": ExtResource("39_l50ve")
 }],
 "loop": false,
 "name": &"melee",

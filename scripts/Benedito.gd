@@ -40,11 +40,12 @@ func handle_attacks():
 func update_animation():
 	if is_attacking:
 		if animated_sprite.animation == &"melee":
+			animated_sprite.position.y = -7	
 			return
 		if animated_sprite.animation != &"attack":
 			animated_sprite.play("attack")
 		return
-	
+	animated_sprite.position.y = -15
 	if is_grabbing_ledge:
 		animated_sprite.play("climb")
 		return

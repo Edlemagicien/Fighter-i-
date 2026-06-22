@@ -41,17 +41,17 @@
 [ext_resource type="Texture2D" uid="uid://bcncw8frxpwya" path="res://assets/sprites/Personnages/Blandre/jump2.png" id="37_tp5cd"]
 [ext_resource type="Texture2D" uid="uid://6x4a4nr1ujnp" path="res://assets/sprites/Personnages/Blandre/blandre_taking_damage7.png" id="38"]
 [ext_resource type="Texture2D" uid="uid://okp42v8qh3ki" path="res://assets/sprites/Personnages/Blandre/jump3.png" id="38_hxwgh"]
-[ext_resource type="Texture2D" uid="uid://bhq5j1rjm7ij0" path="res://assets/sprites/Personnages/Blandre/blandre_walk1.png" id="39"]
 [ext_resource type="Texture2D" uid="uid://h5rg2s7r02ri" path="res://assets/sprites/Personnages/Blandre/jump4.png" id="39_qn56t"]
-[ext_resource type="Texture2D" uid="uid://d0jpdjvfej0s8" path="res://assets/sprites/Personnages/Blandre/blandre_walk2.png" id="40"]
 [ext_resource type="Texture2D" uid="uid://b4cw7b84chwoq" path="res://assets/sprites/Personnages/Blandre/jump5.png" id="40_dqoub"]
-[ext_resource type="Texture2D" uid="uid://bqh4iq50o7rre" path="res://assets/sprites/Personnages/Blandre/blandre_walk3.png" id="41"]
-[ext_resource type="Texture2D" uid="uid://cu2f6djxj58oj" path="res://assets/sprites/Personnages/Blandre/blandre_walk4.png" id="42"]
 [ext_resource type="Script" uid="uid://d1g2ky5ris2sd" path="res://scripts/hitbox.gd" id="43"]
 [ext_resource type="Texture2D" uid="uid://ckq6vpdyuxy8w" path="res://assets/sprites/Personnages/Blandre/Blandre_melee1.png" id="43_gfca4"]
 [ext_resource type="Texture2D" uid="uid://drt5wj3gfuesu" path="res://assets/sprites/Personnages/Blandre/Blandre_melee2.png" id="44_0u2tj"]
 [ext_resource type="Texture2D" uid="uid://jjspi4xqp4ld" path="res://assets/sprites/Personnages/Blandre/Blandre_melee3.png" id="45_ekflb"]
 [ext_resource type="Texture2D" uid="uid://cd0tjnafm7wll" path="res://assets/sprites/Personnages/Blandre/Blandre_melee4.png" id="46_gsgm4"]
+[ext_resource type="Texture2D" uid="uid://dxeqj8bwq72bc" path="res://assets/sprites/Personnages/Morelle/blandre_walk1 (1).png" id="48_0u2tj"]
+[ext_resource type="Texture2D" uid="uid://codrnqnwoarfo" path="res://assets/sprites/Personnages/Morelle/blandre_walk2.png" id="49_ekflb"]
+[ext_resource type="Texture2D" uid="uid://bsdm01keok28s" path="res://assets/sprites/Personnages/Morelle/blandre_walk3.png" id="50_gsgm4"]
+[ext_resource type="Texture2D" uid="uid://ytdsqfuy0ur0" path="res://assets/sprites/Personnages/Morelle/blandre_walk4.png" id="51_tropu"]
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{
@@ -226,16 +226,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("39")
+"texture": ExtResource("48_0u2tj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40")
+"texture": ExtResource("49_ekflb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41")
+"texture": ExtResource("50_gsgm4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("42")
+"texture": ExtResource("51_tropu")
 }],
 "loop": true,
 "name": &"run",
@@ -266,7 +266,7 @@ voice_die = ExtResource("5_a8fr8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1857223151]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("1")
-animation = &"attack"
+animation = &"run"
 offset = Vector2(0, -33)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=618495778]

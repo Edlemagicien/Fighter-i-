@@ -35,24 +35,19 @@
 [ext_resource type="Texture2D" uid="uid://b1j5hh2fhidsf" path="res://assets/sprites/Personnages/Morelle/morelle_taking_damage3.png" id="43"]
 [ext_resource type="Texture2D" uid="uid://bdijeq7o5fbcg" path="res://assets/sprites/Personnages/Morelle/morelle_taking_damage4.png" id="44"]
 [ext_resource type="Texture2D" uid="uid://cx7k6ln84qwma" path="res://assets/sprites/Personnages/Morelle/morelle_taking_damage5.png" id="45"]
-[ext_resource type="Texture2D" uid="uid://dtpmtaxr270jg" path="res://assets/sprites/Personnages/Morelle/jump1.png" id="45_l382c"]
 [ext_resource type="Texture2D" uid="uid://cfna0t0xcps5p" path="res://assets/sprites/Personnages/Morelle/morelle_taking_damage6.png" id="46"]
-[ext_resource type="Texture2D" uid="uid://cx1gme1d1i72s" path="res://assets/sprites/Personnages/Morelle/jump2.png" id="46_g8a8h"]
 [ext_resource type="Texture2D" uid="uid://b4lk1hh7glxd0" path="res://assets/sprites/Personnages/Morelle/morelle_taking_damage7.png" id="47"]
-[ext_resource type="Texture2D" uid="uid://dyaovr7vuahxg" path="res://assets/sprites/Personnages/Morelle/jump3.png" id="47_omfhw"]
 [ext_resource type="Texture2D" uid="uid://pvoevtwv0l7e" path="res://assets/sprites/Personnages/Morelle/morelle_taking_damage8.png" id="48"]
-[ext_resource type="Texture2D" uid="uid://4858vuufclu7" path="res://assets/sprites/Personnages/Morelle/jump4.png" id="48_mvfna"]
 [ext_resource type="Texture2D" uid="uid://dbabhhtmx3ihu" path="res://assets/sprites/Personnages/Morelle/morelle_taking_damage9.png" id="49"]
-[ext_resource type="Texture2D" uid="uid://depbej5yvl45f" path="res://assets/sprites/Personnages/Morelle/jump5.png" id="49_m7x2s"]
 [ext_resource type="Script" uid="uid://d1g2ky5ris2sd" path="res://scripts/hitbox.gd" id="50"]
-[ext_resource type="Texture2D" uid="uid://crac3x5o13uk8" path="res://assets/sprites/Personnages/Morelle/jump6.png" id="50_d3eov"]
-[ext_resource type="Texture2D" uid="uid://c1i2xl2fg8xe4" path="res://assets/sprites/Personnages/Morelle/jump7.png" id="51_rq2ym"]
-[ext_resource type="Texture2D" uid="uid://d0gk17ac283is" path="res://assets/sprites/Personnages/Morelle/jump8.png" id="52_0id45"]
-[ext_resource type="Texture2D" uid="uid://kiwedwpmyyuk" path="res://assets/sprites/Personnages/Morelle/jump9.png" id="53_jmejj"]
+[ext_resource type="Texture2D" uid="uid://cxaclqqw71oam" path="res://assets/sprites/Personnages/Morelle/jump1 (1).png" id="53_g8a8h"]
 [ext_resource type="Texture2D" uid="uid://7x5f7c8s3yra" path="res://assets/sprites/Personnages/Morelle/morelle_climb1.png" id="54_climb1"]
 [ext_resource type="Texture2D" uid="uid://cmrk667mexmsl" path="res://assets/sprites/Personnages/Morelle/morelle_climb2.png" id="55_climb2"]
+[ext_resource type="Texture2D" uid="uid://buar80ebbgj64" path="res://assets/sprites/Personnages/Morelle/ezgif-7b73239bb1a78057.png" id="55_m7x2s"]
 [ext_resource type="Texture2D" uid="uid://qd1uw2g12p6y" path="res://assets/sprites/Personnages/Morelle/morelle_climb3.png" id="56_climb3"]
+[ext_resource type="Texture2D" uid="uid://d3k2ovuelq2ys" path="res://assets/sprites/Personnages/Morelle/ezgif-7f1de8e216d28875.png" id="56_d3eov"]
 [ext_resource type="Texture2D" uid="uid://cprt6tqqkqsyb" path="res://assets/sprites/Personnages/Morelle/morelle_climb4.png" id="57_climb4"]
+[ext_resource type="Texture2D" uid="uid://cypu5xh5n4fu7" path="res://assets/sprites/Personnages/Morelle/ezgif-714521a64eb566bd.png" id="57_rq2ym"]
 [ext_resource type="Texture2D" uid="uid://b0evwaxtxbyjd" path="res://assets/sprites/Personnages/Morelle/morelle_climb5.png" id="58_climb5"]
 [ext_resource type="Texture2D" uid="uid://cnbwih0oevsae" path="res://assets/sprites/Personnages/Morelle/morelle_climb6.png" id="59_climb6"]
 [ext_resource type="Texture2D" uid="uid://vt65m2a4ycdc" path="res://assets/sprites/Personnages/Morelle/morelle_climb7.png" id="60_climb7"]
@@ -188,16 +183,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("45_l382c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_g8a8h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_omfhw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_mvfna")
+"texture": ExtResource("53_g8a8h")
 }],
 "loop": true,
 "name": &"fall",
@@ -243,31 +229,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("45_l382c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_g8a8h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_omfhw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_mvfna")
-}, {
-"duration": 1.0,
-"texture": ExtResource("49_m7x2s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("50_d3eov")
-}, {
-"duration": 1.0,
-"texture": ExtResource("51_rq2ym")
-}, {
-"duration": 1.0,
-"texture": ExtResource("52_0id45")
-}, {
-"duration": 1.0,
-"texture": ExtResource("53_jmejj")
+"texture": ExtResource("53_g8a8h")
 }],
 "loop": true,
 "name": &"jump",
@@ -304,31 +266,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("22")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23")
-}, {
-"duration": 1.0,
 "texture": ExtResource("24")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25")
+"texture": ExtResource("55_m7x2s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("26")
+"texture": ExtResource("56_d3eov")
 }, {
 "duration": 1.0,
-"texture": ExtResource("27")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30")
+"texture": ExtResource("57_rq2ym")
 }],
 "loop": true,
 "name": &"run",
@@ -347,17 +294,16 @@ height = 124.0
 radius = 30.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ledge"]
-size = Vector2(20, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=2041489519]
 script = ExtResource("1")
 papier_morelle = ExtResource("2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1857223151]
+position = Vector2(4.000002, -1.0833321)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("1")
-animation = &"fall"
-frame_progress = 0.2516987
+animation = &"jump"
 offset = Vector2(0, -33)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=618495778]

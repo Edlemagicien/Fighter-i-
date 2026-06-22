@@ -46,7 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://dmqpfavvw1e7i" path="res://assets/sprites/Personnages/Justine/Justine_dash5.png" id="40"]
 [ext_resource type="Texture2D" uid="uid://dgyoe7ccnogwc" path="res://assets/sprites/Personnages/Justine/Justine_dash6.png" id="41"]
 [ext_resource type="Texture2D" uid="uid://diqe3c7b13lv6" path="res://assets/sprites/Personnages/Justine/Justine_dash7.png" id="42"]
-[ext_resource type="PackedScene" path="res://scenes/justine_projectile.tscn" id="43"]
+[ext_resource type="PackedScene" uid="uid://gifh7u62cy7j" path="res://scenes/justine_projectile.tscn" id="43"]
 [ext_resource type="Texture2D" uid="uid://dc58iohcicbkt" path="res://assets/sprites/Personnages/Justine/Justine_attack1.png" id="44"]
 [ext_resource type="Texture2D" uid="uid://c3wbksblyualn" path="res://assets/sprites/Personnages/Justine/Justine_attack2.png" id="45"]
 [ext_resource type="Texture2D" uid="uid://62kd8djul5py" path="res://assets/sprites/Personnages/Justine/Justine_attack3.png" id="46"]
@@ -98,25 +98,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("36")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42")
+"texture": ExtResource("29")
 }],
 "loop": true,
 "name": &"climb",
@@ -335,7 +317,7 @@ voice_die = ExtResource("6_6w57i")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=79103466]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("1")
-animation = &"idle"
+animation = &"climb"
 autoplay = "idle"
 offset = Vector2(0, -33)
 

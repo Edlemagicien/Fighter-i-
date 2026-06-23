@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://brd00s1lh5itu" path="res://scripts/McGavigan.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://b74k2r00anxh2" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan attack 1.png" id="2"]
 [ext_resource type="AudioStream" uid="uid://c88ctn2pblqs0" path="res://assets/audio/voicelines/McGavigan/2points_McGavigan.wav" id="2_gxfln"]
+[ext_resource type="PackedScene" uid="uid://dduvg76c3kxlp" path="res://scenes/mcgavigan_projectile.tscn" id="2_ow44v"]
 [ext_resource type="Texture2D" uid="uid://bfy6vxjmexwqp" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan attack 2.png" id="3"]
 [ext_resource type="AudioStream" uid="uid://ck57xqphqdu3c" path="res://assets/audio/voicelines/McGavigan/hurt_McGavigan.wav" id="3_a37m4"]
 [ext_resource type="Texture2D" uid="uid://bl5uyw5x06gis" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan attack 3.png" id="4"]
@@ -12,10 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://csrgiamt43yqi" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan attack 5.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://c2dtjlftqh8kq" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan attack 6.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://dohbwqsvfms15" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan attack 7.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dul3h5bj6kgge" path="res://assets/sprites/Personnages/Mcgavigan/McGavigan_ult2.png" id="8_3ek1h"]
 [ext_resource type="Texture2D" uid="uid://byjhykp7fv77l" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan attack 8.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://b0axjb2iv17he" path="res://assets/sprites/Personnages/Mcgavigan/McGavigan_ult3.png" id="9_ow44v"]
 [ext_resource type="Texture2D" uid="uid://c6063d62tudqo" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan attack 9.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://qsb0j2g0kwyx" path="res://assets/sprites/Personnages/Mcgavigan/McGavigan_ult4.png" id="10_37e8w"]
 [ext_resource type="Texture2D" uid="uid://cqkq0w4pvmjac" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan attack 10.png" id="11"]
-[ext_resource type="Texture2D" uid="uid://cwvf0yv2atvxi" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan attack 11.png" id="12"]
 [ext_resource type="Texture2D" uid="uid://dpn8w75o0goyj" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan idle 1.png" id="13"]
 [ext_resource type="Texture2D" uid="uid://dhjsyhj4dd1nl" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan idle 2.png" id="14"]
 [ext_resource type="Texture2D" uid="uid://b13v7hxibvnr8" path="res://assets/sprites/Personnages/Mcgavigan/Mcgavigan idle 3.png" id="15"]
@@ -71,38 +74,20 @@ animations = [{
 "texture": ExtResource("2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3")
-}, {
-"duration": 1.0,
 "texture": ExtResource("4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5")
+"texture": ExtResource("8_3ek1h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6")
+"texture": ExtResource("9_ow44v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12")
+"texture": ExtResource("10_37e8w")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -328,6 +313,7 @@ radius = 30.0
 
 [node name="Mcgavigan" type="CharacterBody2D" unique_id=2041489519]
 script = ExtResource("1")
+mcgavigan_projectile = ExtResource("2_ow44v")
 voice_select = ExtResource("2_gxfln")
 voice_hurt = ExtResource("3_a37m4")
 voice_special = ExtResource("4_3ek1h")
@@ -336,7 +322,7 @@ voice_die = ExtResource("5_ow44v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1857223151]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("1")
-animation = &"jump"
+animation = &"attack"
 offset = Vector2(0, -33)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=618495778]

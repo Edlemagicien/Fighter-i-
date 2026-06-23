@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dduvg76c3kxlp"]
+
+[ext_resource type="Script" uid="uid://biarxlk24me7v" path="res://scripts/mcgavigan_projectile.gd" id="1_wmm2w"]
+[ext_resource type="Texture2D" uid="uid://ciit4itpgxod1" path="res://assets/sprites/Personnages/Mcgavigan/ballon.png" id="2_vsu3t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v7g6m"]
+radius = 388.7647
+
+[node name="McGaviganProjectile" type="Area2D" unique_id=1626001010]
+script = ExtResource("1_wmm2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=826654133]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_vsu3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=118717537]
+scale = Vector2(0.05, 0.05)
+shape = SubResource("CircleShape2D_v7g6m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

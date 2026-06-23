@@ -2,18 +2,21 @@ extends Control
 signal stage_selected(stage_scene: PackedScene, source_id: StringName, source_node: Node)
 signal back_requested(source_id: StringName, source_node: Node)
 
+# On garde ton StageSlot existant !
 const STAGE_SLOT_SCENE: PackedScene = preload("res://scenes/ui/stage_slot.tscn")
 
-@export var stage_grid: GridContainer
+# Nouveaux exports pour relier notre nouvelle interface
+@export var slot_container: CenterContainer
+@export var left_button: Button
+@export var right_button: Button
 @export var back_button: Button
-@export var total_slots: int = 6
 
 var _is_transitioning: bool = false
-var _focused_slot_index: int = 0
+var current_index: int = 0
 var _on_back_button: bool = false
-var _all_slots: Array[Node] = []
-var _grid_columns: int = 3
+var active_slot: Node = null
 
+# Ta liste de cartes d'origine
 var stages: Array[Dictionary] = [
 	{
 		"display_name": "Map lunaire",
@@ -33,46 +36,62 @@ var stages: Array[Dictionary] = [
 ]
 
 func _ready() -> void:
-	_build_stage_grid()
+	_build_carousel()
+	
 	if back_button:
 		back_button.pressed.connect(_on_back_pressed)
-	_focused_slot_index = 0
+	if left_button:
+		left_button.pressed.connect(_on_left_pressed)
+	if right_button:
+		right_button.pressed.connect(_on_right_pressed)
+		
+	current_index = 0
+	_on_back_button = false
 	_update_visuals()
 
-func _build_stage_grid() -> void:
-	if stage_grid == null:
+func _build_carousel() -> void:
+	if slot_container == null:
 		return
-	for child: Node in stage_grid.get_children():
-		child.queue_free()
-	_all_slots.clear()
-	for stage_data: Dictionary in stages:
-		var slot: Node = STAGE_SLOT_SCENE.instantiate()
-		stage_grid.add_child(slot)
-		if slot.has_method("setup"):
-			slot.setup(stage_data["display_name"], stage_data["scene"], stage_data["preview"])
-		if slot.has_signal("stage_pressed"):
-			slot.connect("stage_pressed", _on_stage_pressed)
-		_all_slots.append(slot)
-	var empty_count: int = max(total_slots - stages.size(), 0)
-	for i: int in range(empty_count):
-		var empty_slot: Node = STAGE_SLOT_SCENE.instantiate()
-		stage_grid.add_child(empty_slot)
-		if empty_slot.has_method("setup"):
-			empty_slot.setup()
-		_all_slots.append(empty_slot)
+		
+	active_slot = STAGE_SLOT_SCENE.instantiate()
+	
+	# --- LA SOLUTION EST ICI ---
+	# On force une très grande taille (400x250) pour ce slot !
+	active_slot.custom_minimum_size = Vector2(1344, 756)
+	
+	slot_container.add_child(active_slot)
+	
+	if active_slot.has_signal("stage_pressed"):
+		active_slot.connect("stage_pressed", _on_stage_pressed)
 
 func _update_visuals() -> void:
-	for i in range(_all_slots.size()):
-		var slot = _all_slots[i]
-		if not _on_back_button and i == _focused_slot_index:
-			slot.modulate = Color(1.0, 1.0, 0.5, 1.0)
+	if active_slot and active_slot.has_method("setup"):
+		var stage_data = stages[current_index]
+		# On met à jour l'image et le texte du slot central
+		active_slot.setup(stage_data["display_name"], stage_data["scene"], stage_data["preview"])
+		
+		# Surbrillance jaune classique si on est sur la carte
+		if not _on_back_button:
+			active_slot.modulate = Color(1.0, 1.0, 0.5, 1.0) 
 		else:
-			if slot._stage_scene == null:
-				slot.modulate = Color(0.6, 0.6, 0.6, 1.0)
-			else:
-				slot.modulate = Color(1.0, 1.0, 1.0, 1.0)
+			active_slot.modulate = Color(1.0, 1.0, 1.0, 1.0) 
+			
 	if back_button:
 		back_button.modulate = Color.YELLOW if _on_back_button else Color.WHITE
+
+func _on_left_pressed() -> void:
+	if _is_transitioning: return
+	current_index -= 1
+	if current_index < 0:
+		current_index = stages.size() - 1 # Boucle vers la fin
+	_update_visuals()
+
+func _on_right_pressed() -> void:
+	if _is_transitioning: return
+	current_index += 1
+	if current_index >= stages.size():
+		current_index = 0 # Boucle vers le début
+	_update_visuals()
 
 func _on_stage_pressed(stage_scene: PackedScene) -> void:
 	if _is_transitioning:
@@ -86,6 +105,7 @@ func _on_back_pressed() -> void:
 	_is_transitioning = true
 	back_requested.emit(&"stage_select_menu", self)
 
+# --- GESTION MANETTE / CLAVIER ---
 func _unhandled_input(event: InputEvent) -> void:
 	if _is_transitioning:
 		return
@@ -99,7 +119,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if _on_back_button:
 		if event.is_action_pressed("ui_up"):
 			_on_back_button = false
-			_focused_slot_index = _all_slots.size() - 1
 			_update_visuals()
 			get_viewport().set_input_as_handled()
 		elif event.is_action_pressed("p1_select"):
@@ -107,43 +126,18 @@ func _unhandled_input(event: InputEvent) -> void:
 			_on_back_pressed()
 		return
 
-	# Navigation dans la grille
-	var moved := false
-	if event.is_action_pressed("ui_right"):
-		var current_row = _focused_slot_index / _grid_columns
-		var new_index = _focused_slot_index + 1
-		if new_index / _grid_columns == current_row:
-			_focused_slot_index = new_index
-			moved = true
-	elif event.is_action_pressed("ui_left"):
-		var current_row = _focused_slot_index / _grid_columns
-		var new_index = _focused_slot_index - 1
-		if new_index >= 0 and new_index / _grid_columns == current_row:
-			_focused_slot_index = new_index
-			moved = true
+	# Navigation Carrousel (Gauche/Droite) et Retour (Bas)
+	if event.is_action_pressed("ui_left"):
+		_on_left_pressed()
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("ui_right"):
+		_on_right_pressed()
+		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("ui_down"):
-		if _focused_slot_index + _grid_columns >= _all_slots.size():
-			_on_back_button = true
-			_update_visuals()
-			get_viewport().set_input_as_handled()
-			return
-		else:
-			_focused_slot_index = _focused_slot_index + _grid_columns
-			moved = true
-	elif event.is_action_pressed("ui_up"):
-		var new_index = _focused_slot_index - _grid_columns
-		if new_index >= 0:
-			_focused_slot_index = new_index
-			moved = true
-
-	if moved:
+		_on_back_button = true
 		_update_visuals()
 		get_viewport().set_input_as_handled()
-		return
-
-	if event.is_action_pressed("p1_select"):
+	elif event.is_action_pressed("p1_select"):
 		get_viewport().set_input_as_handled()
-		if _focused_slot_index < _all_slots.size():
-			var slot = _all_slots[_focused_slot_index]
-			if slot._stage_scene != null:
-				_on_stage_pressed(slot._stage_scene)
+		if active_slot and active_slot._stage_scene != null:
+			_on_stage_pressed(active_slot._stage_scene)

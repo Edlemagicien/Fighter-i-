@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://df5gfpqrctdr7" path="res://assets/art/ui/menu_background.png" id="2_3tdmd"]
 [ext_resource type="FontFile" uid="uid://d4beyjxkjfg6p" path="res://assets/fonts/perfect_dos_vga_437.ttf" id="2_acfnj"]
 
-[node name="StageSelectMenu" type="Control" unique_id=1827105511 node_paths=PackedStringArray("stage_grid", "back_button")]
+[node name="StageSelectMenu" type="Control" unique_id=1827105511 node_paths=PackedStringArray("slot_container", "left_button", "right_button", "back_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mxueo")
-stage_grid = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/StageList")
+slot_container = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Carousel/SlotContainer")
+left_button = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Carousel/BtnLeft")
+right_button = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/Carousel/BtnRight")
 back_button = NodePath("MarginContainer/CenterContainer/MarginContainer/Menu/CenterContainer/BackButton")
 
 [node name="Background" type="TextureRect" parent="." unique_id=104181321]
@@ -60,13 +62,6 @@ theme_override_font_sizes/font_size = 48
 text = "Selection de carte"
 horizontal_alignment = 1
 
-[node name="StageList" type="GridContainer" parent="MarginContainer/CenterContainer/MarginContainer/Menu" unique_id=1137322331]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-columns = 3
-
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/MarginContainer/Menu" unique_id=1773165666]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -78,3 +73,25 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_acfnj")
 theme_override_font_sizes/font_size = 32
 text = "RETOUR"
+
+[node name="Carousel" type="HBoxContainer" parent="MarginContainer/CenterContainer/MarginContainer/Menu" unique_id=1517422016]
+custom_minimum_size = Vector2(0, 1000)
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="BtnLeft" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Carousel" unique_id=418847540]
+custom_minimum_size = Vector2(60, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "<"
+
+[node name="SlotContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Carousel" unique_id=1719651426]
+custom_minimum_size = Vector2(1700, 0)
+layout_mode = 2
+
+[node name="BtnRight" type="Button" parent="MarginContainer/CenterContainer/MarginContainer/Menu/Carousel" unique_id=552286149]
+custom_minimum_size = Vector2(60, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = ">"

@@ -170,7 +170,7 @@ func _on_settings_back_requested(_source_id: StringName = &"", _source_node: Nod
 	_transition_to(func(): _show_main_menu())
 
 func _on_stage_select_back_requested(_source_id: StringName = &"", _source_node: Node = null) -> void:
-	_transition_to(func(): _show_main_menu())
+	_transition_to(func(): _show_character_select_menu())
 
 func _on_stage_selected(stage_scene: PackedScene, _source_id: StringName = &"", _source_node: Node = null) -> void:
 	selected_stage_scene = stage_scene

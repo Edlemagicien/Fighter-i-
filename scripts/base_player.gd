@@ -23,7 +23,7 @@ var damage_percent   : float = 0.0
 var stocks           : int   = 0
 var is_attacking     : bool  = false
 var invincible_timer : float = 0.0
-var stun_timer       : float = 0.0 # <-- NOUVEAU TIMER POUR L'ETOURDISSEMENT
+var stun_timer       : float = 0.0 
 var facing_left      : bool  = true
 var taking_damage    : bool  = false
 var spawn_point      : Vector2
@@ -31,6 +31,11 @@ var hud_control      : Node  = null
 var _is_dying        : bool  = false
 var special_gauge    : int   = 0
 const MAX_SPECIAL_GAUGE : int = 5
+const SHIELD_DURATION := 2.0
+const SHIELD_COOLDOWN := 20.0
+var shield_active := false
+var shield_timer := 0.0
+var shield_cooldown := 0.0
 
 # Dash
 var is_dashing       : bool  = false
@@ -101,7 +106,17 @@ func _physics_process(delta):
 	# Gestion de l'invincibilité
 	if invincible_timer > 0:
 		invincible_timer -= delta
-		
+	# Bouclier
+	if shield_active:
+		shield_timer -= delta
+
+		if shield_timer <= 0:
+			shield_active = false
+			sprite.modulate = Color.WHITE
+
+	if shield_cooldown > 0:
+		shield_cooldown -= delta
+		update_hud()
 	# Gestion du cooldown de ré-accrochage
 	if regrab_timer > 0:
 		regrab_timer -= delta
@@ -143,6 +158,7 @@ func _physics_process(delta):
 		can_air_dash = true # Reset au sol
 
 	handle_jump()
+	handle_shield()
 	handle_movement()
 	handle_dash_input() # La nouvelle fonction
 	handle_fast_fall()
@@ -169,7 +185,26 @@ func handle_jump():
 		velocity.y = -jump_force
 		jumps_remaining -= 1
 		play_voice(voice_jump)
+# BOUCLIER
 
+func handle_shield():
+
+	var action = "p" + str(player_number) + "_shield"
+
+	if Input.is_action_just_pressed(action):
+
+		if shield_active:
+			return
+
+		if shield_cooldown > 0:
+			return
+
+		shield_active = true
+		shield_timer = SHIELD_DURATION
+		shield_cooldown = SHIELD_COOLDOWN
+
+		sprite.modulate = Color(0.4,0.8,1.0)
+		
 # MOUVEMENT 
 func handle_movement():
 	if is_dashing:
@@ -272,6 +307,8 @@ func do_melee_attack():
 # RECEVOIR UN COUP 
 func take_hit(dmg: float, _kb_x: float, _kb_y: float,
 			  attacker_right: bool, recoil_effect: bool):
+	if shield_active:
+		return
 	if invincible_timer > 0:
 		return
 	is_dashing = false

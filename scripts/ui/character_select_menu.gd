@@ -22,7 +22,7 @@ const COLOR_READY_STATE := Color.GREEN
 @export var back_button: Button
 @export var p1_status_label: Label
 @export var p2_status_label: Label
-@export var total_slots: int = 21
+@export var total_slots: int = 13
 
 @onready var voice_player : AudioStreamPlayer = $VoicePlayer
 

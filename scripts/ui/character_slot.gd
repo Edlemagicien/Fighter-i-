@@ -6,7 +6,37 @@ signal character_pressed(slot: Node, character_scene: PackedScene)
 @export var name_label: Label
 
 var _character_scene: PackedScene = null
+var _style_normal: StyleBoxFlat
+var _style_hover: StyleBoxFlat
 
+func _ready() -> void:
+	_style_normal = StyleBoxFlat.new()
+	_style_normal.bg_color = Color(0.0, 0.0, 0.0, 0.0)  # Transparent
+	_style_normal.border_width_left = 2
+	_style_normal.border_width_top = 2
+	_style_normal.border_width_right = 2
+	_style_normal.border_width_bottom = 2
+	_style_normal.border_color = Color(0.0, 0.0, 0.0, 0.0)
+	
+	_style_hover = StyleBoxFlat.new()
+	_style_hover.bg_color = Color(0.6, 0.6, 0.6, 1.0)  # Gris opaque
+	_style_hover.border_width_left = 2
+	_style_hover.border_width_top = 2
+	_style_hover.border_width_right = 2
+	_style_hover.border_width_bottom = 2
+	_style_hover.border_color = Color(0.8, 0.8, 0.8, 1.0)
+	
+	add_theme_stylebox_override("normal", _style_normal)
+	add_theme_stylebox_override("hover", _style_normal)
+	add_theme_stylebox_override("pressed", _style_normal)
+	add_theme_stylebox_override("focus", _style_normal)
+	add_theme_stylebox_override("disabled", _style_normal)
+
+func set_background_active(active: bool) -> void:
+	if active:
+		add_theme_stylebox_override("normal", _style_hover)
+	else:
+		add_theme_stylebox_override("normal", _style_normal)
 func setup(
 	display_name: String = "",
 	character_scene: PackedScene = null,

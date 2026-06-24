@@ -109,13 +109,16 @@ func _physics_process(delta):
 	# Bouclier
 	if shield_active:
 		shield_timer -= delta
-
 		if shield_timer <= 0:
 			shield_active = false
+			shield_cooldown = SHIELD_COOLDOWN
 			sprite.modulate = Color.WHITE
+		update_hud()
 
-	if shield_cooldown > 0:
+	if not shield_active and shield_cooldown > 0:
 		shield_cooldown -= delta
+		if shield_cooldown < 0:
+			shield_cooldown = 0
 		update_hud()
 	# Gestion du cooldown de ré-accrochage
 	if regrab_timer > 0:
@@ -201,7 +204,6 @@ func handle_shield():
 
 		shield_active = true
 		shield_timer = SHIELD_DURATION
-		shield_cooldown = SHIELD_COOLDOWN
 
 		sprite.modulate = Color(0.4,0.8,1.0)
 		
@@ -306,11 +308,11 @@ func do_melee_attack():
 
 # RECEVOIR UN COUP 
 func take_hit(dmg: float, _kb_x: float, _kb_y: float,
-			  attacker_right: bool, recoil_effect: bool):
+			  attacker_right: bool, recoil_effect: bool) -> bool:
 	if shield_active:
-		return
+		return false
 	if invincible_timer > 0:
-		return
+		return false
 	is_dashing = false
 	damage_percent += dmg
 	taking_damage = true
@@ -337,6 +339,7 @@ func take_hit(dmg: float, _kb_x: float, _kb_y: float,
 	if cam and cam.has_method("shake"):
 		cam.shake()
 	update_hud()
+	return true
 
 # MORT
 func die():
@@ -400,6 +403,8 @@ func update_hud():
 		
 		if hud.has_method("update_special"):
 			hud.update_special(player_number, special_gauge, MAX_SPECIAL_GAUGE)
+		if hud.has_method("update_shield"):
+			hud.update_shield(player_number, shield_cooldown, shield_active)
 
 # UTILITAIRE ATTAQUE
 func do_attack(hitbox_name: String, startup: float,
@@ -514,3 +519,14 @@ func play_voice_forced(stream: AudioStream) -> void:
 
 	voice_player.stream = stream
 	voice_player.play()
+
+func update_shield(player_number: int, cooldown: float, active: bool):
+	# Exemple simple (à adapter à ton UI)
+	var label = get_node("ShieldLabelP%d" % player_number)
+
+	if active:
+		label.text = "Shield: ON"
+	elif cooldown > 0:
+		label.text = "Shield CD: %.1f" % cooldown
+	else:
+		label.text = "Shield: READY"

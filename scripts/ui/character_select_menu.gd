@@ -7,11 +7,12 @@ signal back_requested(source_id: StringName, source_node: Node)
 const CHARACTER_SLOT_SCENE: PackedScene = preload("res://scenes/ui/character_slot.tscn")
 
 # Couleurs pour les visuels
-const COLOR_P1_CURSOR := Color.BLUE
-const COLOR_P1_SELECTED := Color.CORNFLOWER_BLUE
-const COLOR_P2_CURSOR := Color.RED
-const COLOR_P2_SELECTED := Color.CRIMSON
-const COLOR_BOTH_SELECTED := Color.MAGENTA
+const COLOR_P1_SELECTED := Color(0.0, 0.5, 2.0)    # Bleu électrique
+const COLOR_P2_SELECTED := Color(2.0, 0.0, 0.0)    # Rouge vif
+const COLOR_P1_CURSOR := Color(0.0, 0.09, 0.902, 0.7)
+const COLOR_P2_CURSOR :=  Color(0.741, 0.0, 0.169, 0.7)
+const COLOR_BOTH_SELECTED := Color(0.506, 0.208, 0.937, 1.0)
+const COLOR_BOTH_CURSOR :=Color(0.506, 0.208, 0.937, 0.7)
 const COLOR_READY_BUTTON_HOVER := Color.YELLOW
 const COLOR_READY_STATE := Color.GREEN
 
@@ -185,38 +186,38 @@ func _update_visuals() -> void:
 	"""Met à jour l'apparence visuelle de tous les slots et boutons."""
 	_update_grid_visuals()
 	_update_ready_buttons_visual()
-
 func _update_grid_visuals() -> void:
-	"""Met à jour les couleurs et l'état des slots de la grille."""
 	for i in range(_all_slots.size()):
 		var slot = _all_slots[i]
-		var slot_modulate = Color.WHITE
+		
+		# Fond gris opaque si curseur dessus OU sélectionné
+		var bg_active = (not _p1_on_ready_button and i == _p1_cursor_index) or \
+						(not _p2_on_ready_button and i == _p2_cursor_index) or \
+						slot == _p1_selected_slot or \
+						slot == _p2_selected_slot
+		if slot.has_method("set_background_active"):
+			slot.set_background_active(bg_active)
+		
+		# Curseurs en priorité basse
 		var slot_self_modulate = Color.WHITE
-		
-		# Déterminer la couleur du slot
-		if slot == _p1_selected_slot and slot == _p2_selected_slot:
-			# Les deux joueurs ont sélectionné ce slot
-			slot_modulate = COLOR_BOTH_SELECTED
-		elif slot == _p1_selected_slot:
-			# J1 a sélectionné ce slot
-			slot_modulate = COLOR_P1_SELECTED
-		elif slot == _p2_selected_slot:
-			# J2 a sélectionné ce slot
-			slot_modulate = COLOR_P2_SELECTED
-		
-		# Ajouter le curseur si le joueur survole ce slot (en mode grille)
 		if not _p1_on_ready_button and i == _p1_cursor_index:
-			slot_self_modulate = COLOR_P1_CURSOR
+			if not _p2_on_ready_button and i == _p2_cursor_index:
+				slot_self_modulate = COLOR_BOTH_CURSOR
+			else:
+				slot_self_modulate = COLOR_P1_CURSOR
 		elif not _p2_on_ready_button and i == _p2_cursor_index:
 			slot_self_modulate = COLOR_P2_CURSOR
 		
-		if slot.has_method("set_modulate"):
-			slot.modulate = slot_modulate
-		else:
-			slot.modulate = slot_modulate
-			
+		# Sélection prioritaire sur les curseurs
+		if slot == _p1_selected_slot and slot == _p2_selected_slot:
+			slot_self_modulate = COLOR_BOTH_SELECTED
+		elif slot == _p1_selected_slot:
+			slot_self_modulate = COLOR_P1_SELECTED
+		elif slot == _p2_selected_slot:
+			slot_self_modulate = COLOR_P2_SELECTED
+		
+		slot.modulate = Color.WHITE
 		slot.self_modulate = slot_self_modulate
-
 func _update_ready_buttons_visual() -> void:
 	"""Met à jour l'apparence des boutons Prêt."""
 	if ready_button_p1:
@@ -272,21 +273,38 @@ func _select_character_for_player(player: int, slot: Node) -> void:
 	_update_ui()
 
 func _on_ready_button_p1_pressed() -> void:
-	"""Gère le bouton Prêt du joueur 1."""
 	if _p1_on_ready_button:
+		if _p1_selected_slot == null:
+			_flash_error_label(p1_status_label, "J1 : Choisissez un personnage !")
+			return
 		_p1_is_ready = !_p1_is_ready
+		if p1_status_label:
+			p1_status_label.remove_theme_color_override("font_color")
 		_update_visuals()
 		_update_ui()
 		_check_auto_transition()
 
 func _on_ready_button_p2_pressed() -> void:
-	"""Gère le bouton Prêt du joueur 2."""
 	if _p2_on_ready_button:
+		if _p2_selected_slot == null:
+			_flash_error_label(p2_status_label, "J2 : Choisissez un personnage !")
+			return
 		_p2_is_ready = !_p2_is_ready
+		if p2_status_label:
+			p2_status_label.remove_theme_color_override("font_color")
 		_update_visuals()
 		_update_ui()
 		_check_auto_transition()
-
+func _flash_error_label(label: Label, message: String) -> void:
+	if label == null:
+		return
+	label.text = message
+	label.add_theme_color_override("font_color", Color.RED)
+	var tween = get_tree().create_tween()
+	tween.tween_property(label, "modulate:a", 0.0, 0.2)
+	tween.tween_property(label, "modulate:a", 1.0, 0.2)
+	tween.tween_property(label, "modulate:a", 0.0, 0.2)
+	tween.tween_property(label, "modulate:a", 1.0, 0.2)
 func _check_auto_transition() -> void:
 	"""Vérifie si les deux joueurs sont prêts et déclenche la transition."""
 	if _p1_is_ready and _p2_is_ready and not _is_transitioning:

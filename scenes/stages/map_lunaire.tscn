@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b6cjd3dxelqol"]
+[gd_scene format=3 uid="uid://ds300om8lt8pt"]
 
 [ext_resource type="Script" uid="uid://brtd404y3d7wq" path="res://scripts/stages/dev_stage.gd" id="1_nilyu"]
 [ext_resource type="Script" uid="uid://bd7ypfuxertcc" path="res://scripts/platform.gd" id="2_3pgli"]
@@ -328,6 +328,9 @@ layout_mode = 2
 [node name="P1Special" type="ProgressBar" parent="HUD/HUDControl/P1Panel/VBoxContainer" unique_id=2144527968]
 layout_mode = 2
 
+[node name="P1Shield" type="ProgressBar" parent="HUD/HUDControl/P1Panel/VBoxContainer" unique_id=123285559]
+layout_mode = 2
+
 [node name="P2Panel" type="PanelContainer" parent="HUD/HUDControl" unique_id=1451034187]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 0
@@ -357,6 +360,9 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="P2Special" type="ProgressBar" parent="HUD/HUDControl/P2Panel/VBoxContainer" unique_id=1479362686]
+layout_mode = 2
+
+[node name="P2Shield" type="ProgressBar" parent="HUD/HUDControl/P2Panel/VBoxContainer" unique_id=1586247835]
 layout_mode = 2
 
 [node name="TimePanel" type="PanelContainer" parent="HUD/HUDControl" unique_id=692279510]

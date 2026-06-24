@@ -6,7 +6,8 @@ extends Control
 
 @onready var p1_stocks = $P1Panel/VBoxContainer/P1Stocks
 @onready var p2_stocks = $P2Panel/VBoxContainer/P2Stocks
-
+@onready var p1_shield = get_node_or_null("P1Panel/VBoxContainer/P1Shield")
+@onready var p2_shield = get_node_or_null("P2Panel/VBoxContainer/P2Shield")
 @onready var time_label = $TimePanel/TimeLabel
 
 # --- COULEURS DE DEGATS ---
@@ -14,8 +15,11 @@ const COLOR_SAFE   = Color(1.0, 1.0, 1.0) # Blanc (0-49%)
 const COLOR_WARN   = Color(1.0, 0.9, 0.2) # Jaune (50-99%)
 const COLOR_DANGER = Color(1.0, 0.5, 0.1) # Orange (100-149%)
 const COLOR_CRIT   = Color(1.0, 0.15, 0.15) # Rouge (150%+)
+const SHIELD_COOLDOWN := 20.0
+
 
 func _ready():
+	var bar = get_node_or_null("P1Panel/VBoxContainer/P1Shield")
 	# On initialise l'affichage des vies au départ selon la configuration globale
 	update_stocks(1, GameData.stock_count)
 	update_stocks(2, GameData.stock_count)
@@ -23,6 +27,7 @@ func _ready():
 	# Affichage de base au lancement
 	update_percent(1, 0.0)
 	update_percent(2, 0.0)
+	p1_shield.value = 0
 
 # --- MISE A JOUR DU POURCENTAGE ---
 func update_percent(player_num: int, percent: float):
@@ -99,3 +104,26 @@ func update_special(player_num: int, current_gauge: int, max_gauge: int):
 			bar.modulate = Color(1.0, 0.8, 0.0) # Doré
 		else:
 			bar.modulate = Color(1.0, 1.0, 1.0) # Normal
+			
+func update_shield(player_num: int, cooldown: float, active: bool):
+	var bar = p1_shield if player_num == 1 else p2_shield
+
+	if not bar:
+		return
+
+	bar.max_value = SHIELD_COOLDOWN
+
+	if active:
+		# Bouclier en cours d'utilisation : pleine + bleu
+		bar.value = SHIELD_COOLDOWN
+		bar.modulate = Color(0.4, 0.8, 1.0)
+
+	elif cooldown > 0:
+		# Recharge : monte de 0 à max au fur et à mesure que cooldown descend
+		bar.value = SHIELD_COOLDOWN - cooldown
+		bar.modulate = Color(1.0, 0.5, 0.0) # Orange
+
+	else:
+		# Prêt : pleine + vert
+		bar.value = SHIELD_COOLDOWN
+		bar.modulate = Color(0.2, 1.0, 0.2)

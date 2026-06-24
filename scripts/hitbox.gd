@@ -14,12 +14,23 @@ func _on_body_entered(body):
 	if body.is_in_group("players") and body != get_parent():
 		# Récupérer le parent (le joueur qui attaque)
 		var parent = get_parent()
+
 		# Récupérer les données de l'attaque
 		var data = parent.ATTACK_DATA[attack_type]
+
 		# Savoir dans quelle direction regarde l'attaquant
 		var facing_right = not parent.facing_left
+
 		# Infliger les dégâts
-		body.take_hit(data[0], data[1], data[2], facing_right, true)
-		# On remplit la jauge de l'attaquant !
-		if parent.has_method("add_special_gauge"):
-			parent.add_special_gauge(1)
+		var player := body as BasePlayer
+		if player:
+			var hit: bool = player.take_hit(
+				data[0],
+				data[1],
+				data[2],
+				facing_right,
+				true
+			)
+
+			if hit and parent.has_method("add_special_gauge"):
+				parent.add_special_gauge(1)

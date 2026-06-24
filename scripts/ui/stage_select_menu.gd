@@ -37,17 +37,25 @@ var stages: Array[Dictionary] = [
 
 func _ready() -> void:
 	_build_carousel()
-	
-	if back_button:
-		back_button.pressed.connect(_on_back_pressed)
+	_remove_button_backgrounds()
 	if left_button:
 		left_button.pressed.connect(_on_left_pressed)
 	if right_button:
 		right_button.pressed.connect(_on_right_pressed)
+	if back_button:
+		back_button.pressed.connect(_on_back_pressed)
 		
 	current_index = 0
 	_on_back_button = false
 	_update_visuals()
+
+func _remove_button_backgrounds() -> void:
+	var empty = StyleBoxEmpty.new()
+	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
+		if left_button:
+			left_button.add_theme_stylebox_override(state, empty)
+		if right_button:
+			right_button.add_theme_stylebox_override(state, empty)
 
 func _build_carousel() -> void:
 	if slot_container == null:
@@ -55,8 +63,6 @@ func _build_carousel() -> void:
 		
 	active_slot = STAGE_SLOT_SCENE.instantiate()
 	
-	# --- LA SOLUTION EST ICI ---
-	# On force une très grande taille (400x250) pour ce slot !
 	active_slot.custom_minimum_size = Vector2(1344, 756)
 	
 	slot_container.add_child(active_slot)
@@ -69,13 +75,6 @@ func _update_visuals() -> void:
 		var stage_data = stages[current_index]
 		# On met à jour l'image et le texte du slot central
 		active_slot.setup(stage_data["display_name"], stage_data["scene"], stage_data["preview"])
-		
-		# Surbrillance jaune classique si on est sur la carte
-		if not _on_back_button:
-			active_slot.modulate = Color(1.0, 1.0, 0.5, 1.0) 
-		else:
-			active_slot.modulate = Color(1.0, 1.0, 1.0, 1.0) 
-			
 	if back_button:
 		back_button.modulate = Color.YELLOW if _on_back_button else Color.WHITE
 

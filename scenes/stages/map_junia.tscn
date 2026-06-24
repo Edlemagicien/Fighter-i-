@@ -329,9 +329,12 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="P1Special" type="ProgressBar" parent="HUD/HUDControl/P1Panel/VBoxContainer" unique_id=1115541123]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+show_percentage = false
 
 [node name="P1Shield" type="ProgressBar" parent="HUD/HUDControl/P1Panel/VBoxContainer" unique_id=1978727808]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 max_value = 20.0
 show_percentage = false
@@ -365,10 +368,12 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="P2Special" type="ProgressBar" parent="HUD/HUDControl/P2Panel/VBoxContainer" unique_id=1006098947]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+show_percentage = false
 
 [node name="P2Shield" type="ProgressBar" parent="HUD/HUDControl/P2Panel/VBoxContainer" unique_id=1719607877]
-custom_minimum_size = Vector2(150, 200)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 max_value = 20.0
 show_percentage = false

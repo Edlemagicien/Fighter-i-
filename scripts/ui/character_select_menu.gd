@@ -11,8 +11,8 @@ const COLOR_P1_SELECTED := Color(0.0, 0.5, 2.0)    # Bleu électrique
 const COLOR_P2_SELECTED := Color(2.0, 0.0, 0.0)    # Rouge vif
 const COLOR_P1_CURSOR := Color(0.0, 0.09, 0.902, 0.7)
 const COLOR_P2_CURSOR :=  Color(0.741, 0.0, 0.169, 0.7)
-const COLOR_BOTH_SELECTED := Color(0.506, 0.208, 0.937, 1.0)
-const COLOR_BOTH_CURSOR :=Color(0.506, 0.208, 0.937, 0.7)
+const COLOR_BOTH_SELECTED := Color(0.527, 0.003, 0.874, 1.0)
+const COLOR_BOTH_CURSOR := Color(0.527, 0.003, 0.874, 0.7)
 const COLOR_READY_BUTTON_HOVER := Color.YELLOW
 const COLOR_READY_STATE := Color.GREEN
 

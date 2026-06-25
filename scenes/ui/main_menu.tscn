@@ -103,6 +103,6 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("2_fe2o3")
-text = "Version : 1.0
+text = "Version : 2.0
 "
 vertical_alignment = 2

@@ -29,6 +29,8 @@ func setup(
 		return
 	if name_label != null:
 		name_label.text = display_name
+		name_label.add_theme_constant_override("outline_size", 6)
+		name_label.add_theme_color_override("font_outline_color", Color.BLACK)
 	if preview_texture != null:
 		preview_texture.texture = preview
 		# Force toutes les images à la même taille

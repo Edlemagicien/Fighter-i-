@@ -283,8 +283,9 @@ script = ExtResource("7_nqtjh")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1750403046]
 z_index = -1
+texture_filter = 5
 position = Vector2(456.50006, -152.25008)
-scale = Vector2(21.640625, 26.356482)
+scale = Vector2(2.185, 2.636)
 texture = ExtResource("8_0kokl")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1605162887]

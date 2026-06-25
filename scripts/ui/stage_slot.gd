@@ -19,27 +19,23 @@ func setup(
 	preview: Texture2D = null
 ) -> void:
 	_stage_scene = stage_scene
-
 	if stage_scene == null:
 		if name_label != null:
 			name_label.text = ""
-
 		if preview_texture != null:
 			preview_texture.texture = null
-
 		modulate = Color(0.6, 0.6, 0.6, 1.0)
 		disabled = true
 		return
-
 	if name_label != null:
 		name_label.text = display_name
-
 	if preview_texture != null:
 		preview_texture.texture = preview
-
+		# Force toutes les images à la même taille
+		preview_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		preview_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	modulate = Color(1.0, 1.0, 1.0, 1.0)
 	disabled = false
-
 # Quand le bouton est pressé on envoie la scène de la map seulement si ce slot correspond à une map valide.
 func _pressed() -> void:
 	if _stage_scene == null:

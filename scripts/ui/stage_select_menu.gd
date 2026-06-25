@@ -62,14 +62,14 @@ func _build_carousel() -> void:
 		return
 		
 	active_slot = STAGE_SLOT_SCENE.instantiate()
+	slot_container.add_child(active_slot)  # ← ajoute D'ABORD
 	
-	active_slot.custom_minimum_size = Vector2(1344, 756)
-	
-	slot_container.add_child(active_slot)
+	active_slot.custom_minimum_size = Vector2(960, 540)  # ← ENSUITE les propriétés
+	active_slot.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	active_slot.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	
 	if active_slot.has_signal("stage_pressed"):
 		active_slot.connect("stage_pressed", _on_stage_pressed)
-
 func _update_visuals() -> void:
 	if active_slot and active_slot.has_method("setup"):
 		var stage_data = stages[current_index]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://3gavtdcsrb1c"]
+[gd_scene format=3 uid="uid://3gavtdcsrb1c"]
 
 [ext_resource type="Script" uid="uid://delfvbpua7ty6" path="res://scripts/n_kounou.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://csrgihefs44o6" path="res://scenes/cookie_dubois.tscn" id="2"]
@@ -347,7 +347,6 @@ height = 100.0
 radius = 30.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ledge"]
-size = Vector2(20, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=2041489519]
 script = ExtResource("1")
@@ -370,14 +369,14 @@ shape = SubResource("CapsuleShape2D_3vyb7")
 position = Vector2(-4, -17)
 shape = SubResource("CapsuleShape2D_6nak3")
 
-[node name="MeleeArea" type="Area2D" parent="."]
+[node name="MeleeArea" type="Area2D" parent="." unique_id=1569028834]
 position = Vector2(40, -20)
 monitoring = false
 monitorable = false
 script = ExtResource("58")
 attack_type = "melee"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea" unique_id=2097048673]
 shape = SubResource("CircleShape2D_7m8n1")
 
 [node name="LedgeDetector" type="Area2D" parent="." unique_id=2041489520]

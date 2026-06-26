@@ -48,8 +48,6 @@ func _transition_to(callable: Callable) -> void:
 	transition_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func _ready() -> void:
-	SettingsData.load_settings()
-	SettingsData.apply_settings()
 	_show_splash_screen()
 
 func _replace_child(container: Node, current_child: Node, scene_resource: PackedScene) -> Node:

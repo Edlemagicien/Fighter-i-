@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cbj1gl51fogdk" path="res://assets/art/ui/icons/sfx_logo.png" id="6_ngbvi"]
 [ext_resource type="Texture2D" uid="uid://bs83mcyfbfh6t" path="res://assets/art/ui/icons/ui_logo.png" id="7_mishw"]
 
-[node name="SettingsMenu" type="Control" unique_id=1676625064 node_paths=PackedStringArray("master_volume_slider", "music_volume_slider", "sfx_volume_slider", "ui_volume_slider", "fullscreen_check_box", "back_button")]
+[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("master_volume_slider", "music_volume_slider", "sfx_volume_slider", "ui_volume_slider", "fullscreen_check_box", "back_button", "audio_panel", "controls_panel", "controls_button", "profile_option_p1", "profile_option_p2", "bindings_container_p1", "bindings_container_p2")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,29 +16,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x3vyp")
-master_volume_slider = NodePath("CenterContainer/MarginContainer/Settings/AudioOption/MasterVolumeSlider")
-music_volume_slider = NodePath("CenterContainer/MarginContainer/Settings/MusicOption/MusicVolumeSlider")
-sfx_volume_slider = NodePath("CenterContainer/MarginContainer/Settings/SFXOption/SFXVolumeSlider")
-ui_volume_slider = NodePath("CenterContainer/MarginContainer/Settings/UIOption/UIVolumeSlider")
-fullscreen_check_box = NodePath("CenterContainer/MarginContainer/Settings/FullscreenOption/FullscreenCheckBox")
-back_button = NodePath("CenterContainer/MarginContainer/Settings/BackButton")
+master_volume_slider = NodePath("CenterContainer/MarginContainer/VBox/AudioPanel/AudioOption/MasterVolumeSlider")
+music_volume_slider = NodePath("CenterContainer/MarginContainer/VBox/AudioPanel/MusicOption/MusicVolumeSlider")
+sfx_volume_slider = NodePath("CenterContainer/MarginContainer/VBox/AudioPanel/SFXOption/SFXVolumeSlider")
+ui_volume_slider = NodePath("CenterContainer/MarginContainer/VBox/AudioPanel/UIOption/UIVolumeSlider")
+fullscreen_check_box = NodePath("CenterContainer/MarginContainer/VBox/AudioPanel/FullscreenOption/FullscreenCheckBox")
+back_button = NodePath("CenterContainer/MarginContainer/VBox/BackButton")
+audio_panel = NodePath("CenterContainer/MarginContainer/VBox/AudioPanel")
+controls_panel = NodePath("CenterContainer/MarginContainer/VBox/ControlsPanel")
+controls_button = NodePath("CenterContainer/MarginContainer/VBox/ControlsButton")
+profile_option_p1 = NodePath("CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox/PlayerP1/ProfileOptionP1")
+profile_option_p2 = NodePath("CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox/PlayerP2/ProfileOptionP2")
+bindings_container_p1 = NodePath("CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox/PlayerP1/BindingsP1")
+bindings_container_p2 = NodePath("CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox/PlayerP2/BindingsP2")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=243991552]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -30.0
-offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_mhswj")
 expand_mode = 5
 stretch_mode = 6
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=844257252]
-modulate = Color(1, 1, 1, 0.43137255)
-self_modulate = Color(0.2159017, 0.21590173, 0.2159017, 1)
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(0.2159017, 0.21590173, 0.2159017, 0.43137255)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,121 +51,183 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.46229059, 0.46229059, 0.46229059, 1)
 
-[node name="CenterContainer" type="PanelContainer" parent="." unique_id=1796213935]
+[node name="CenterContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -129.0
-offset_top = -170.0
-offset_right = 129.0
-offset_bottom = 170.0
+offset_left = -350.0
+offset_top = -300.0
+offset_right = 350.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer" unique_id=1173338547]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Settings" type="VBoxContainer" parent="CenterContainer/MarginContainer" unique_id=1372110113]
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="TitleLabel" type="Label" parent="CenterContainer/MarginContainer/Settings" unique_id=1428300261]
+[node name="TitleLabel" type="Label" parent="CenterContainer/MarginContainer/VBox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_x3vyp")
 theme_override_font_sizes/font_size = 48
 text = "Options"
 horizontal_alignment = 1
 
-[node name="AudioOption" type="HBoxContainer" parent="CenterContainer/MarginContainer/Settings" unique_id=1445122649]
+[node name="AudioPanel" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="AudioOption" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBox/AudioPanel"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="AudioIcon" type="TextureRect" parent="CenterContainer/MarginContainer/Settings/AudioOption" unique_id=2139198661]
+[node name="AudioIcon" type="TextureRect" parent="CenterContainer/MarginContainer/VBox/AudioPanel/AudioOption"]
 layout_mode = 2
 texture = ExtResource("4_yu862")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="MasterVolumeSlider" type="HSlider" parent="CenterContainer/MarginContainer/Settings/AudioOption" unique_id=858752180]
+[node name="MasterVolumeSlider" type="HSlider" parent="CenterContainer/MarginContainer/VBox/AudioPanel/AudioOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
-[node name="MusicOption" type="HBoxContainer" parent="CenterContainer/MarginContainer/Settings" unique_id=232071008]
+[node name="MusicOption" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBox/AudioPanel"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="MusicIcon" type="TextureRect" parent="CenterContainer/MarginContainer/Settings/MusicOption" unique_id=808088737]
+[node name="MusicIcon" type="TextureRect" parent="CenterContainer/MarginContainer/VBox/AudioPanel/MusicOption"]
 layout_mode = 2
 texture = ExtResource("5_ywggk")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="MusicVolumeSlider" type="HSlider" parent="CenterContainer/MarginContainer/Settings/MusicOption" unique_id=1139057898]
+[node name="MusicVolumeSlider" type="HSlider" parent="CenterContainer/MarginContainer/VBox/AudioPanel/MusicOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_constants/center_grabber = 0
 
-[node name="SFXOption" type="HBoxContainer" parent="CenterContainer/MarginContainer/Settings" unique_id=62519394]
+[node name="SFXOption" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBox/AudioPanel"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="SFXIcon" type="TextureRect" parent="CenterContainer/MarginContainer/Settings/SFXOption" unique_id=717354004]
+[node name="SFXIcon" type="TextureRect" parent="CenterContainer/MarginContainer/VBox/AudioPanel/SFXOption"]
 layout_mode = 2
 texture = ExtResource("6_ngbvi")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="SFXVolumeSlider" type="HSlider" parent="CenterContainer/MarginContainer/Settings/SFXOption" unique_id=1482953568]
+[node name="SFXVolumeSlider" type="HSlider" parent="CenterContainer/MarginContainer/VBox/AudioPanel/SFXOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_constants/center_grabber = 0
 
-[node name="UIOption" type="HBoxContainer" parent="CenterContainer/MarginContainer/Settings" unique_id=1294747893]
+[node name="UIOption" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBox/AudioPanel"]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="UIIcon" type="TextureRect" parent="CenterContainer/MarginContainer/Settings/UIOption" unique_id=1731739564]
+[node name="UIIcon" type="TextureRect" parent="CenterContainer/MarginContainer/VBox/AudioPanel/UIOption"]
 layout_mode = 2
 texture = ExtResource("7_mishw")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="UIVolumeSlider" type="HSlider" parent="CenterContainer/MarginContainer/Settings/UIOption" unique_id=2130074237]
+[node name="UIVolumeSlider" type="HSlider" parent="CenterContainer/MarginContainer/VBox/AudioPanel/UIOption"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_constants/center_grabber = 0
 
-[node name="FullscreenOption" type="HBoxContainer" parent="CenterContainer/MarginContainer/Settings" unique_id=2091238843]
+[node name="FullscreenOption" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBox/AudioPanel"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/MarginContainer/Settings/FullscreenOption" unique_id=241584356]
+[node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBox/AudioPanel/FullscreenOption"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_x3vyp")
 theme_override_font_sizes/font_size = 32
 text = "Plein ecran"
 
-[node name="FullscreenCheckBox" type="CheckBox" parent="CenterContainer/MarginContainer/Settings/FullscreenOption" unique_id=421404066]
+[node name="FullscreenCheckBox" type="CheckBox" parent="CenterContainer/MarginContainer/VBox/AudioPanel/FullscreenOption"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="BackButton" type="Button" parent="CenterContainer/MarginContainer/Settings" unique_id=123146773]
+[node name="ControlsPanel" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+visible = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/MarginContainer/VBox/ControlsPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 380)
+
+[node name="HBox" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="PlayerP1" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="LabelP1" type="Label" parent="CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox/PlayerP1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x3vyp")
+theme_override_font_sizes/font_size = 24
+text = "Joueur 1"
+horizontal_alignment = 1
+
+[node name="ProfileOptionP1" type="OptionButton" parent="CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox/PlayerP1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x3vyp")
+theme_override_font_sizes/font_size = 20
+
+[node name="BindingsP1" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox/PlayerP1"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="PlayerP2" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="LabelP2" type="Label" parent="CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox/PlayerP2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x3vyp")
+theme_override_font_sizes/font_size = 24
+text = "Joueur 2"
+horizontal_alignment = 1
+
+[node name="ProfileOptionP2" type="OptionButton" parent="CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox/PlayerP2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x3vyp")
+theme_override_font_sizes/font_size = 20
+
+[node name="BindingsP2" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBox/ControlsPanel/ScrollContainer/HBox/PlayerP2"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ControlsButton" type="Button" parent="CenterContainer/MarginContainer/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_x3vyp")
+theme_override_font_sizes/font_size = 32
+text = "CONTROLES"
+
+[node name="BackButton" type="Button" parent="CenterContainer/MarginContainer/VBox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_x3vyp")
 theme_override_font_sizes/font_size = 32
